@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'brakeman', require: false
+  gem 'bullet'
+  gem 'rails_best_practices', require: false
   gem 'rspec-rails', '~> 3.6'
   gem 'rubocop', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

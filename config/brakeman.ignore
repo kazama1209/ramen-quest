@@ -1,0 +1,468 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "00ae4ca90b747beb22bd02911ccdb8fb65a22cf4546925e182eee56096e93bdf",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/apply/new.html.erb",
+      "line": 38,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:apply][:job_offer_id]).required_skills",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Users::ApplyController",
+          "method": "confirm",
+          "line": 27,
+          "file": "app/controllers/users/apply_controller.rb",
+          "rendered": {
+            "name": "users/apply/new",
+            "file": "app/views/users/apply/new.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/apply/new"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "4092d1a42db6010d1f282f89723cf9cba53401a8988d7887bbee27619848f5fd",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 2,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).subtitle",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "578d24cc5b5f27868c1733adb1c242be6e0699ad8b843fb346b53286f9ee1426",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/job_offer/show.html.erb",
+      "line": 34,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).salary_other",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/job_offer/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "5e0cb82b70de35fd3e9f215d2a81358f49f91922054b7b262800adecacf271a4",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 10,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).background",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "75e3e94c7cc42644cbfe280bd8bfba801edcb7ce99e51abbd8b2d0bb745fa789",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/job_offer/show.html.erb",
+      "line": 70,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).message",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/job_offer/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "837b2fa76daff34936f01c98a4434135d47942debf10d409aaf66f355e2e32e9",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 56,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).required_skills",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "9442c3210a05f42a591993c8916d33858abd466ae5d1e3dc67fcdeefaa7bd34c",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 46,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).description",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "a90c94cc7a9f6deaa7f302cbbb2e85adcec89aec051d0fb564289052ba3fbc06",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 92,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).salary_other",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "bfcf52f39477ec03ab8474377fa18ccaf50c7a313d82a0ca183c09a03fbaf430",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 4,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).lead",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "d409f3c8453e2a8ab02059f720824cd237782ca7f4bc47631d70eb01258d8d1f",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 104,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).holiday",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "d9050293654f2cbb0211850d88d9be756038e4b7da4507269c4308ee09e3fe73",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 98,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).welfare",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "e0bdea6fa3019ad46865557a42d19674ba9d8e8d8f3e355ba358702fdcff8364",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/users/shared/_offer_common_table.html.erb",
+      "line": 62,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "JobOffer.unscoped.find(params[:id]).welcome_skills",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Clients::JobOfferController",
+          "method": "show",
+          "line": 49,
+          "file": "app/controllers/clients/job_offer_controller.rb",
+          "rendered": {
+            "name": "users/job_offer/show",
+            "file": "app/views/users/job_offer/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "users/job_offer/show",
+          "line": 66,
+          "file": "app/views/users/job_offer/show.html.erb",
+          "rendered": {
+            "name": "users/shared/_offer_common_table",
+            "file": "app/views/users/shared/_offer_common_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "users/shared/_offer_common_table"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    }
+  ],
+  "updated": "2019-08-10 15:29:27 +0900",
+  "brakeman_version": "4.5.1"
+}
