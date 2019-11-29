@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <div class="container">
+    <%= link_to "全国ラーメン図鑑", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "#", class: "nav-link text-white" do %>
+            <i class="fas fa-user-edit"></i> 新規登録
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "#", class: "nav-link text-white" do %>
+            <i class="fas fa-power-off"></i> ログイン
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
