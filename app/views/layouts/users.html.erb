@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'users', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <%= render partial: 'users/shared/header' %>
+      </header>
+      <main>
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </main>
+      <footer>
+        <%= render partial: 'users/shared/footer' %>
+      </footer>
+    </div>
+  </body>
+</html>

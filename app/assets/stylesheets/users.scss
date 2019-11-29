@@ -1,0 +1,55 @@
+@import 'bootstrap';
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import 'users/home';
+@import 'users/custom-variables';
+
+
+/* universal */
+
+body {
+  background: $body-bg;
+}
+
+a {
+  color: inherit;
+  
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100\vh;
+}
+
+.breadcrumb-background {
+  background: $gray;
+  margin-top: 56px;
+}
+
+.carousel-indicators {
+  & li {
+    border-radius: 50%;
+    margin: 1px 3px;
+    height: 10px;;
+    max-width: 10px;
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $gray;
+  margin-top: auto;
+}
+
+.pagination {
+  justify-content: center;
+  padding-top: 20px;
+  margin: 0;
+}
