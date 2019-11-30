@@ -3,8 +3,11 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-@import 'users/home';
 @import 'users/custom-variables';
+@import 'users/social';
+
+@import 'users/home';
+@import 'users/mypage';
 
 
 /* universal */
@@ -26,20 +29,6 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100\vh;
-}
-
-.breadcrumb-background {
-  background: $gray;
-  margin-top: 56px;
-}
-
-.carousel-indicators {
-  & li {
-    border-radius: 50%;
-    margin: 1px 3px;
-    height: 10px;;
-    max-width: 10px;
-  }
 }
 
 footer {

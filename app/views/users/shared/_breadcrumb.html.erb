@@ -1,0 +1,13 @@
+<% breadcrumbs(autoroot: false).tap do |links| %>
+  <% if links.any? %>
+    <ul class="breadcrumb bg-transparent container mb-0">
+      <% links.each do |link| %>
+        <% if link.current? %>
+          <li class="breadcrumb-item active"><%= link.text %></li>
+        <% else %>
+          <li class="breadcrumb-item"><%= link_to link.text, link.url %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

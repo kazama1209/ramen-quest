@@ -6,16 +6,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to "#", class: "nav-link text-white" do %>
-            <i class="fas fa-user-edit"></i> 新規登録
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "#", class: "nav-link text-white" do %>
-            <i class="fas fa-power-off"></i> ログイン
-          <% end %>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
+              <i class="fas fa-user"></i> マイページ
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to logout_path, method: :delete, class: "nav-link text-white" do %>
+              <i class="fas fa-sign-out-alt"></i> ログアウト
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to new_signup_path, class: "nav-link text-white" do %>
+              <i class="fas fa-user-edit"></i> ユーザー登録
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to login_path, class: "nav-link text-white" do %>
+              <i class="fas fa-power-off"></i> ログイン
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
