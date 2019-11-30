@@ -1,0 +1,21 @@
+<% breadcrumb :mypage_dashbord %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 order-md-2 mb-4">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-body p-4">
+        <div class="user">
+          <div class="image">
+            <%= image_tag(current_user.image.url) if current_user.image %>
+          </div>
+        </div>
+        <p class="text-center fs-26 p-2"><%= current_user.name %></p>
+        <div class="text-center">
+          <%= current_user.profile? ? current_user.profile : '自己紹介文を入力してください。' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 order-md-1">
+    <%= render partial: 'users/shared/sidebar' %>
+  </div>
+</div>

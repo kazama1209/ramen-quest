@@ -1,0 +1,17 @@
+ja:
+  simple_form:
+    'yes': 'はい'
+    'no': 'いいえ'
+    required:
+      text: '必須'
+      mark: '*'
+    labels:
+      user:
+        name: '名前'
+        email: 'メールアドレス'
+        email_confirmation: '確認用メールアドレス'
+        profile: '自己紹介'
+        image: '写真'
+        password: 'パスワード'
+        current_password: '現在のパスワード'
+        password_confirmation: '確認用パスワード'

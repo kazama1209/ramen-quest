@@ -1,0 +1,46 @@
+<% breadcrumb :login %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 order-md-2 mb-3">
+    <div class="card bg-white border-none">
+      <div class="card-body p-4">
+        <h2 class="text-center font-weight-bold pb-4">ログイン</h2>
+        <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <div class="form-group px-5">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, class: "form-control", required: true %>
+          </div>
+          <div class="form-group px-5">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, class: "form-control", required: true %>
+          </div>
+          <div class="text-center">
+            <%= submit_tag "ログインする", class: "btn btn-danger btn-sm px-5" %>
+          </div>
+          <div class="text-center py-3">
+            <%= link_to "パスワードを忘れた方はこちら", new_password_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 order-md-1">
+    <div class="card bg-white border-none">
+      <div class="card-body p-4">
+        <p class="text-center font-weight-bold pb-2">SNSアカウントでログイン</p>
+        <div class="text-center">
+          <%= link_to "Facebookでログイン", auth_at_provider_path(provider: :facebook), class: "btn-block btn btn-fb btn-sm text-white px-5" %>
+          <%= link_to "Twitterでログイン", auth_at_provider_path(provider: :twitter), class: "btn-block btn btn-tw btn-sm text-white px-5" %>
+          <%= link_to "LINEでログイン", auth_at_provider_path(provider: :line), class: "btn-block btn btn-li btn-sm text-white px-5" %>
+        </div>
+        <small>
+          <p class="pt-3">ログインに必要なアカウント情報は次の目的以外では使用されません。また、法令に定められた場合を除き第三者への提供はいたしません。</p>
+          <ul>
+            <li>ユーザーIDとしてアカウントの管理</li>
+            <li>パスワード再発行時の本人確認</li>
+          </ul>
+        </small>
+      </div>
+    </div>
+  </div>
+  
+</div>

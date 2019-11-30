@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: ramen_production
-  username: ramen
-  password: <%= ENV['RAMEN_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

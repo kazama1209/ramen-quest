@@ -38,7 +38,6 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'bullet'
   gem 'rails_best_practices', require: false
-  gem 'rspec-rails', '~> 3.6'
   gem 'rubocop', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -46,11 +45,23 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'letter_opener_web'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara', '~> 2.15.2'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails', '~> 4.10.0'
+  gem 'launchy', '~> 2.4.3'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'shoulda-matchers'
+  gem 'webdrivers', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -59,3 +70,22 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'simple_form'
+
+# Authentication
+gem 'email_validator'
+gem 'sorcery'
+
+# Configuration
+gem 'config'
+gem 'dotenv-rails'
+
+# internationalization
+gem 'rails-i18n'
+
+# Image Upload
+gem 'carrierwave'
+gem 'mini_magick'
+
+# SEO
+gem 'gretel'

@@ -1,0 +1,33 @@
+<% breadcrumb :mypage_email %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 order-md-2 mb-3">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="text-center font-weight-bold pb-4">メールアドレスの変更</h2>
+        <%= simple_form_for(current_user, url: email_path(current_user), local: true) do |f| %>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-bordered">
+                <tr>
+                  <th>メールアドレス</th>
+                  <td><%= f.input :email, label: false %></td>
+                </tr>
+                <tr>
+                  <th>確認用メールアドレス</th>
+                  <td><%= f.input :email_confirmation, label: false %></td>
+                </tr>
+                <tr>
+              </table>
+              <div class="text-center">
+                <%= f.submit class: "btn btn-danger btn-sm px-5" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 order-md-1">
+    <%= render partial: 'users/shared/sidebar' %>
+  </div>
+</div>

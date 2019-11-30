@@ -1,0 +1,22 @@
+.user {
+  display: flex;
+  justify-content: center;
+  
+  .image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

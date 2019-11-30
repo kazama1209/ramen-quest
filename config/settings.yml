@@ -1,0 +1,7 @@
+service:
+  default_host: 'localhost:3000'
+
+mail:
+  activation_needed: 'ユーザー登録のご案内'
+  activation_success:  'ユーザー登録完了のご案内'
+  reset_password: 'パスワード再設定手続きのご案内'

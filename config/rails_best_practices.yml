@@ -1,5 +1,5 @@
 AddModelVirtualAttributeCheck: { }
-AlwaysAddDbIndexCheck: { }
+AlwaysAddDbIndexCheck: { ignored_files: 'db/schema.rb' }
 #CheckSaveReturnValueCheck: { }
 #CheckDestroyReturnValueCheck: { }
 DefaultScopeIsEvilCheck: { }
