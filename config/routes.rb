@@ -20,7 +20,12 @@ Rails.application.routes.draw do
       end
     end
     
+    resources :reviews do
+      resources :likes, only: %i[create destroy]
+    end
+    
     namespace :mypage do
+      get :review
       get :profile
       get :email
       get :password
@@ -28,6 +33,7 @@ Rails.application.routes.draw do
     
     scope :mypage do
       resources :dashboard, only: %i[index]
+      resources :reviews
       resources :profiles, only: %i[update]
       resources :email, only: %i[update]
       resources :password, only: %i[update]

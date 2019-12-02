@@ -8,6 +8,11 @@
       <ul class="navbar-nav ml-auto">
         <% if logged_in? %>
           <li class="nav-item">
+            <%= link_to reviews_path, class: "nav-link text-white" do %>
+              <i class="fas fa-star"></i> みんなのレビュー
+            <% end %>
+          </li>
+          <li class="nav-item">
             <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
               <i class="fas fa-user"></i> マイページ
             <% end %>

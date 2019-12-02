@@ -9,3 +9,9 @@ ja:
         name: 'ニックネーム'
         profile: '自己紹介'
         image: '写真'
+      review:
+        title: 'タイトル'
+        shop_name: '店名'
+        rate: '評価'
+        body: '本文'
+        image: '画像'

@@ -67,7 +67,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '>= 4.3.1'
+gem 'cells-erb'
+gem 'cells-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'simple_form'
@@ -86,6 +88,10 @@ gem 'rails-i18n'
 # Image Upload
 gem 'carrierwave'
 gem 'mini_magick'
+
+# Pagination
+gem 'kaminari'
+gem 'kaminari-i18n'
 
 # SEO
 gem 'gretel'

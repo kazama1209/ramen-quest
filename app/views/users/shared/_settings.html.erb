@@ -6,6 +6,11 @@
       <% end %>
     </li>
     <li class="list-group-item list-group-item-action p-0">
+      <%= link_to mypage_review_path(current_user), class: "d-block p-3" do %>
+        <i class="fas fa-star"></i> レビュー
+      <% end %>
+    </li>
+    <li class="list-group-item list-group-item-action p-0">
       <%= link_to mypage_profile_path(current_user), class: "d-block p-3" do %>
         <i class="fas fa-address-card"></i> プロフィール
       <% end %>
