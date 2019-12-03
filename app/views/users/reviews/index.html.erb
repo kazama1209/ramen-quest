@@ -1,7 +1,8 @@
 <% breadcrumb :reviews %>
 <div class="row pt-3 pb-5">
   <div class="col-md-8 mb-3">
-    <%= render 'users/shared/reviews', title: 'みんなのレビュー', reviews: @reviews  %>
+    <%= render partial: 'users/shared/map' %>
+    <%= render 'users/shared/reviews', title: 'レビュー', reviews: @reviews  %>
   </div>
   <div class="col-md-4">
     <%= render 'users/shared/sidemenu' %>

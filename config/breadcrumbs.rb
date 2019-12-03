@@ -33,7 +33,7 @@ crumb :terms do
 end
 
 crumb :reviews do
-  link 'みんなのレビュー', reviews_path
+  link '全国検索', reviews_path
   parent :root
 end
 
@@ -43,7 +43,7 @@ crumb :new_review do
 end
 
 crumb :show_review do |review|
-  link "#{review.shop_name}", review_path(review)
+  link "#{review.shop_name}（#{review.prefecture} #{review.address}）", review_path(review)
   parent :reviews
 end
 
