@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_101657) do
+ActiveRecord::Schema.define(version: 2019_12_03_175641) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 2019_12_02_101657) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "ramen_shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "prefecture", default: 0
+    t.string "address"
+    t.string "phone"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "shop_name"
@@ -39,8 +49,10 @@ ActiveRecord::Schema.define(version: 2019_12_02_101657) do
     t.text "body"
     t.string "image"
     t.bigint "user_id"
+    t.bigint "ramen_shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ramen_shop_id"], name: "index_reviews_on_ramen_shop_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -67,5 +79,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_101657) do
 
   add_foreign_key "likes", "reviews"
   add_foreign_key "likes", "users"
+  add_foreign_key "reviews", "ramen_shops"
   add_foreign_key "reviews", "users"
 end

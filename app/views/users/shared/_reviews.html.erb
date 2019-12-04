@@ -1,6 +1,8 @@
 <div class="card bg-white border-none shadow-sm">
+  <div class="card-header font-weight-bold">
+    <%= title %>
+  </div>
   <div class="card-body p-4">
-    <h2 class="text-center font-weight-bold pb-4"><%= title %></h2>
     <% if reviews.exists? %>
       <% reviews.each do |review| %>
         <%= link_to review_path(review) do %>
@@ -10,7 +12,7 @@
             </div>
             <div class="review-content">
               <h2 class="fs-22 font-weight-bold">
-                <%= review.shop_name %>（<%= review.prefecture %> <%= review.address %>）
+                <%= review.shop_name %>（<%= review.prefecture %>）
               </h2>
               <div id="review-rate-<%= review.id %>"></div>
               <script>

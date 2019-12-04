@@ -1,0 +1,59 @@
+<% breadcrumb :show_ramen_shop, @ramen_shop %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 mb-3">
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-body p-4">
+        <div class="row mb-3">
+          <div class="col-md-4 offset-md-4">
+            <h2 class="m-0 font-weight-bold text-center fs-28"><%= @ramen_shop.name %></h2>
+          </div>
+          <% if logged_in? %>
+            <div class="d-sm-block d-none col-md-4 text-right">
+              <%= link_to edit_ramen_shop_path(@ramen_shop), class: "btn btn-primary btn-sm" do %>
+                <i class="fas fa-edit"></i> 編集
+              <% end %>
+              <%= link_to ramen_shop_path(@ramen_shop), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger btn-sm" do %>
+                <i class="fas fa-trash"></i> 削除
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="text-center">
+          <%= image_tag @ramen_shop.image.medium.url if @ramen_shop.image? %>
+        </div>
+        <div class="mt-4">
+          <table class="table table-bordered">
+            <tr>
+              <th class="bg-light text-center">都道府県</th>
+              <td class="text-center"><%= @ramen_shop.prefecture %></td>
+            </tr>
+            <tr>
+              <th class="bg-light text-center">所在地</th>
+              <td class="text-center"><%= @ramen_shop.address %></td>
+            </tr>
+            <tr>
+              <th class="bg-light text-center">店名</th>
+              <td class="text-center"><%= @ramen_shop.name %></td>
+            </tr>
+            <tr>
+              <th class="bg-light text-center">電話番号</th>
+              <td class="text-center"><%= @ramen_shop.phone %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <%= render 'users/shared/reviews', title: 'この店のレビュー', reviews: @reviews  %>
+    <div class="card bg-white border-none shadow-sm mt-3">
+      <div class="card-body p-4">
+        <p class="text-center font-weight-bold fs-16">レビューを書く</p>
+        <%= simple_form_for(Review.new, url: reviews_path(@ramen_shop.id), method: :post, local: true) do |f| %>
+          <%= render 'users/reviews/form', f: f %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/ramen_shops/sidebar' %>
+  </div>
+</div>

@@ -41,6 +41,9 @@ group :development, :test do
   gem 'rubocop', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -82,7 +85,7 @@ gem 'sorcery'
 gem 'config'
 gem 'dotenv-rails'
 
-# internationalization
+# Internationalization
 gem 'rails-i18n'
 
 # Image Upload
@@ -92,6 +95,9 @@ gem 'mini_magick'
 # Pagination
 gem 'kaminari'
 gem 'kaminari-i18n'
+
+# Search
+gem 'ransack'
 
 # SEO
 gem 'gretel'

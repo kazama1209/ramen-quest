@@ -27,7 +27,7 @@
         <%= render 'users/shared/social_button', review: @review %>
         <h2><%= @review.title %></h2>
         <div class="p-2">
-          <p class="text-info font-weight-bold"><%= @review.created_at.strftime("%Y年%m月%d日") %>投稿（<%= @review.prefecture %> <%= @review.address %>）</p>
+          <p class="text-info font-weight-bold"><%= @review.created_at.strftime("%Y年%m月%d日") %>投稿</p>
           <%= simple_format(@review.body) %>
           <%= render 'users/likes/button', review: @review %>
         </div>
@@ -49,7 +49,7 @@
     </div>
   </div>
   <div class="col-md-4">
-    <%= render 'users/shared/sidemenu' %>
+    <%= render 'users/reviews/sidebar' %>
   </div>
 </div>
 <script>

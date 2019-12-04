@@ -2,20 +2,20 @@
   <div class="col-md-12">
     <table class="table table-bordered">
       <tr>
-        <th>タイトル</th>
-        <td><%= f.input :title, label: false, input_html: { required: true } %></td>
+        <th>都道府県</th>
+        <td><%= f.input :prefecture, collection: RamenShop.prefectures.keys, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
-        <th>評価</th>
-        <td>
-          <div id="star">
-            <%= f.input :rate, as: :hidden, label: false, id: :review_star, input_html: { required: true } %>  
-          </div>
-        </td>
+        <th>所在地</th>
+        <td><%= f.input :address, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
-        <th>本文</th>
-        <td><%= f.input :body, label: false, input_html: { rows: 10, required: true } %></td>
+        <th>店名</th>
+        <td><%= f.input :name, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= f.input :phone, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
         <th>写真</th>
@@ -46,17 +46,8 @@
       }
     }
   
-    $("#review_image").change(function(){
+    $("#ramen_shop_image").change(function(){
       readURL(this);
     });
-  });
-  
-  $('#star').raty({
-    size     : 36,
-    starOff:  '<%= asset_path('star-off.png') %>',
-    starOn : '<%= asset_path('star-on.png') %>',
-    starHalf: '<%= asset_path('star-half.png') %>',
-    scoreName: 'review[rate]',
-    half: true,
   });
 </script>

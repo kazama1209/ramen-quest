@@ -20,9 +20,13 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :reviews do
+    resources :ramen_shops, except: %i[destroy]
+    
+    resources :reviews, except: %i[new] do
       resources :likes, only: %i[create destroy]
     end
+    
+    resources :ranking, only: %i[index]
     
     namespace :mypage do
       get :review
@@ -33,7 +37,7 @@ Rails.application.routes.draw do
     
     scope :mypage do
       resources :dashboard, only: %i[index]
-      resources :reviews
+      resources :reviews, only: %i[index show]
       resources :profiles, only: %i[update]
       resources :email, only: %i[update]
       resources :password, only: %i[update]

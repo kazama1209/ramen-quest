@@ -3,21 +3,31 @@ class Users::ReviewsController < Users::ApplicationController
   before_action :set_review, only: %i[show edit update destroy]
 
   def index
+    @q = Review.ransack(params[:q])
     prefectures = params[:prefecture].blank? ? Review.prefectures.values : params[:prefecture]
-    @reviews = Review.includes(:user).where(prefecture: prefectures).page(params[:page]).order(created_at: :desc)
+    @reviews = @q.result(distinct: true).includes(:user).where(prefecture: prefectures).page(params[:page]).order(created_at: :desc)
   end
 
   def show; end
 
-  def new
-    @review = Review.new
-  end
-
   def create
-    render :new unless current_user.reviews.create(review_params)
+    @ramen_shop = RamenShop.find(params[:format])
+
+    unless current_user.reviews.create(
+      shop_name: @ramen_shop.name,
+      prefecture: @ramen_shop.prefecture,
+      address: @ramen_shop.address,
+      ramen_shop_id: @ramen_shop.id,
+      title: review_params[:title],
+      rate: review_params[:rate],
+      body: review_params[:body],
+      image: review_params[:image]
+    )
+      render :new
+    end
 
     flash[:success] = 'レビューを投稿しました'
-    redirect_to reviews_path
+    redirect_to ramen_shop_path(@ramen_shop)
   end
 
   def edit; end

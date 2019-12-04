@@ -33,7 +33,27 @@ crumb :terms do
 end
 
 crumb :reviews do
-  link '全国検索', reviews_path
+  link 'みんなのレビュー', reviews_path
+  parent :root
+end
+
+crumb :ramen_shops do
+  link 'ラーメンデータベース', ramen_shops_path
+  parent :root
+end
+
+crumb :new_ramen_shop do
+  link '店舗情報追加', new_ramen_shop_path
+  parent :ramen_shops
+end
+
+crumb :show_ramen_shop do |ramen_shop|
+  link "#{ramen_shop.name}（#{ramen_shop.prefecture}）", ramen_shop_path(ramen_shop)
+  parent :ramen_shops
+end
+
+crumb :ranking do
+  link 'ランキング', ranking_index_path
   parent :root
 end
 
@@ -43,7 +63,7 @@ crumb :new_review do
 end
 
 crumb :show_review do |review|
-  link "#{review.shop_name}（#{review.prefecture} #{review.address}）", review_path(review)
+  link "#{review.shop_name}（#{review.prefecture}）", review_path(review)
   parent :reviews
 end
 

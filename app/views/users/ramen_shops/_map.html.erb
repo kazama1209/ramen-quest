@@ -1,4 +1,7 @@
 <div class="card bg-white border-none shadow-sm mb-3">
+  <div class="card-header font-weight-bold">
+    地図から探す
+  </div>
   <div class="card-body p-4">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -28,7 +31,7 @@
                       <tr height="40" style="font-size:10px;text-align:center;">
                         <td></td>
                         <td bgcolor="#8888ff" width="50">
-                          <%= link_to '北海道', reviews_path(prefecture: 1) %>
+                          <%= link_to '北海道', ramen_shops_path(prefecture: 1) %>
                         </td>
                       </tr>
                       <tr>
@@ -42,7 +45,7 @@
                         <td></td>
                         <td width="30"></td>
                         <td bgcolor="#99ddff" width="30">
-                          <%= link_to '青森', reviews_path(prefecture: 2) %>
+                          <%= link_to '青森', ramen_shops_path(prefecture: 2) %>
                         </td>
                         <td width="20"></td>
                       </tr>
@@ -51,10 +54,10 @@
                         <td></td>
                         <td width="30"></td>
                         <td bgcolor="#99ddff" width="30"> 
-                          <%= link_to '秋田', reviews_path(prefecture: 5) %>
+                          <%= link_to '秋田', ramen_shops_path(prefecture: 5) %>
                         </td>
                         <td bgcolor="#99ddff">
-                          <%= link_to '岩手', reviews_path(prefecture: 3) %>
+                          <%= link_to '岩手', ramen_shops_path(prefecture: 3) %>
                         </td>
                       </tr>
                       <tr height="35">
@@ -62,24 +65,24 @@
                         <td></td>
                         <td></td>
                         <td bgcolor="#99ddff" width="30"> 
-                          <%= link_to '山形', reviews_path(prefecture: 6) %>
+                          <%= link_to '山形', ramen_shops_path(prefecture: 6) %>
                         </td>
                         <td bgcolor="#99ddff">
-                          <%= link_to '宮城', reviews_path(prefecture: 4) %>
+                          <%= link_to '宮城', ramen_shops_path(prefecture: 4) %>
                         </td>
                       </tr>
                       <tr height="25">
                         <td bgcolor="#ccf577" width="30">
-                          <%= link_to '石川', reviews_path(prefecture: 17) %>
+                          <%= link_to '石川', ramen_shops_path(prefecture: 17) %>
                         </td>
                         <td bgcolor="#ccf577" width="30">
-                          <%= link_to '富山', reviews_path(prefecture: 16) %>
+                          <%= link_to '富山', ramen_shops_path(prefecture: 16) %>
                         </td>
                         <td bgcolor="#ccaaff" width="60" colspan="2">
-                          <%= link_to '新潟', reviews_path(prefecture: 15) %>
+                          <%= link_to '新潟', ramen_shops_path(prefecture: 15) %>
                         </td>
                         <td bgcolor="#99ddff" width="30">
-                          <%= link_to '福島', reviews_path(prefecture: 7) %>
+                          <%= link_to '福島', ramen_shops_path(prefecture: 7) %>
                         </td>
                       </tr>
                     </table>
@@ -89,91 +92,91 @@
               <table cellspacing="1" cellpadding="0" style="font-size:10px;text-align:center;border-style:none;">
                 <tr height="25">
                   <td bgcolor="#f5e577" width="26">
-                    <%= link_to '長崎', reviews_path(prefecture: 42) %>
+                    <%= link_to '長崎', ramen_shops_path(prefecture: 42) %>
                   </td>
                   <td bgcolor="#f5e577" width="26">
-                    <%= link_to '佐賀', reviews_path(prefecture: 41) %>
+                    <%= link_to '佐賀', ramen_shops_path(prefecture: 41) %>
                   </td>
                   <td bgcolor="#f5e577" width="26"> 
-                    <%= link_to '福島', reviews_path(prefecture: 7) %>
+                    <%= link_to '福島', ramen_shops_path(prefecture: 7) %>
                   </td>
                   <td width="10"></td>
                   <td bgcolor="#ff88bb" width="26" rowspan="2">
-                    <%= link_to '山口', reviews_path(prefecture: 35) %>
+                    <%= link_to '山口', ramen_shops_path(prefecture: 35) %>
                   </td>
                   <td bgcolor="#ff88bb" width="26">
-                    <%= link_to '島根', reviews_path(prefecture: 32) %>
+                    <%= link_to '島根', ramen_shops_path(prefecture: 32) %>
                   </td>
                   <td bgcolor="#ff88bb" width="26">
-                    <%= link_to '鳥取', reviews_path(prefecture: 31) %>
+                    <%= link_to '鳥取', ramen_shops_path(prefecture: 31) %>
                   </td>
                   <td bgcolor="#80f580" width="26" rowspan="2">
-                    <%= link_to '兵庫', reviews_path(prefecture: 28) %>
+                    <%= link_to '兵庫', ramen_shops_path(prefecture: 28) %>
                   </td>
                   <td bgcolor="#80f580" width="30">
-                    <%= link_to '京都', reviews_path(prefecture: 26) %>
+                    <%= link_to '京都', ramen_shops_path(prefecture: 26) %>
                   </td>
                   <td bgcolor="#80f580" width="26">
-                    <%= link_to '滋賀', reviews_path(prefecture: 25) %>
+                    <%= link_to '滋賀', ramen_shops_path(prefecture: 25) %>
                   </td>
                   <td bgcolor="#ccf577" width="30">
-                    <%= link_to '福井', reviews_path(prefecture: 18) %>
+                    <%= link_to '福井', ramen_shops_path(prefecture: 18) %>
                   </td>
                   <td bgcolor="#ccaaff" width="30" rowspan="2">
-                    <%= link_to '長野', reviews_path(prefecture: 20) %>
+                    <%= link_to '長野', ramen_shops_path(prefecture: 20) %>
                   </td>
                   <td bgcolor="#ff99ff" width="30">
-                    <%= link_to '群馬', reviews_path(prefecture: 10) %>
+                    <%= link_to '群馬', ramen_shops_path(prefecture: 10) %>
                   </td>
                   <td bgcolor="#ff99ff" width="30">
-                    <%= link_to '栃木', reviews_path(prefecture: 9) %>
+                    <%= link_to '栃木', ramen_shops_path(prefecture: 9) %>
                   </td>
                   <td bgcolor="#ff99ff" width="30">
-                    <%= link_to '茨城', reviews_path(prefecture: 8) %>
+                    <%= link_to '茨城', ramen_shops_path(prefecture: 8) %>
                   </td>
                   <td width="20"></td>
                 </tr>
                 <tr height="25">
                   <td></td>
                   <td bgcolor="#f5e577">
-                    <%= link_to '熊本', reviews_path(prefecture: 43) %>
+                    <%= link_to '熊本', ramen_shops_path(prefecture: 43) %>
                   </td>
                   <td bgcolor="#f5e577">
-                     <%= link_to '大分', reviews_path(prefecture: 44) %>
+                     <%= link_to '大分', ramen_shops_path(prefecture: 44) %>
                   </td>
                   <td></td>
                   <td bgcolor="#ff88bb">
-                    <%= link_to '広島', reviews_path(prefecture: 34) %>
+                    <%= link_to '広島', ramen_shops_path(prefecture: 34) %>
                   </td>
                   <td bgcolor="#ff88bb">
-                    <%= link_to '岡山', reviews_path(prefecture: 33) %>
+                    <%= link_to '岡山', ramen_shops_path(prefecture: 33) %>
                   </td>
                   <td bgcolor="#80f580"> 
-                    <%= link_to '大阪', reviews_path(prefecture: 27) %>
+                    <%= link_to '大阪', ramen_shops_path(prefecture: 27) %>
                   </td>
                   <td bgcolor="#80f580">
-                    <%= link_to '奈良', reviews_path(prefecture: 29) %>
+                    <%= link_to '奈良', ramen_shops_path(prefecture: 29) %>
                   </td>
                   <td bgcolor="#ffcc88">
-                    <%= link_to '岐阜', reviews_path(prefecture: 21) %>
+                    <%= link_to '岐阜', ramen_shops_path(prefecture: 21) %>
                   </td>
                   <td bgcolor="#ff99ff">
-                    <%= link_to '山梨', reviews_path(prefecture: 19) %>
+                    <%= link_to '山梨', ramen_shops_path(prefecture: 19) %>
                   </td>
                   <td bgcolor="#ff99ff">
-                    <%= link_to '埼玉', reviews_path(prefecture: 11) %>
+                    <%= link_to '埼玉', ramen_shops_path(prefecture: 11) %>
                   </td>
                   <td bgcolor="#ff99ff"> 
-                    <%= link_to '千葉', reviews_path(prefecture: 12) %>
+                    <%= link_to '千葉', ramen_shops_path(prefecture: 12) %>
                   </td>
                 </tr>
                 <tr height="24">
                   <td></td>
                   <td bgcolor="#f5e577"> 
-                    <%= link_to '鹿児島', reviews_path(prefecture: 46) %>
+                    <%= link_to '鹿児島', ramen_shops_path(prefecture: 46) %>
                   </td>
                   <td bgcolor="#f5e577">
-                    <%= link_to '宮崎', reviews_path(prefecture: 45) %>
+                    <%= link_to '宮崎', ramen_shops_path(prefecture: 45) %>
                   </td>
                   <td></td>
                   <td></td>
@@ -181,22 +184,22 @@
                   <td></td>
                   <td></td>
                   <td bgcolor="#80f580"> 
-                    <%= link_to '和歌山', reviews_path(prefecture: 30) %>
+                    <%= link_to '和歌山', ramen_shops_path(prefecture: 30) %>
                   </td>
                   <td bgcolor="#ffcc88">
-                    <%= link_to '三重', reviews_path(prefecture: 24) %>
+                    <%= link_to '三重', ramen_shops_path(prefecture: 24) %>
                   </td>
                   <td bgcolor="#ffcc88">
-                    <%= link_to '愛知', reviews_path(prefecture: 23) %>
+                    <%= link_to '愛知', ramen_shops_path(prefecture: 23) %>
                   </td>
                   <td bgcolor="#ffcc88">
-                    <%= link_to '静岡', reviews_path(prefecture: 22) %>
+                    <%= link_to '静岡', ramen_shops_path(prefecture: 22) %>
                   </td>
                   <td bgcolor="#ff99ff">
-                    <%= link_to '神奈川', reviews_path(prefecture: 14) %>
+                    <%= link_to '神奈川', ramen_shops_path(prefecture: 14) %>
                   </td>
                   <td bgcolor="#ff99ff">
-                    <%= link_to '東京', reviews_path(prefecture: 13) %>
+                    <%= link_to '東京', ramen_shops_path(prefecture: 13) %>
                   </td>
                 </tr>
                 <tr height="20">
@@ -206,25 +209,25 @@
                   <td></td>
                   <td></td>
                   <td bgcolor="#ddbb99">
-                    <%= link_to '愛媛', reviews_path(prefecture: 38) %>
+                    <%= link_to '愛媛', ramen_shops_path(prefecture: 38) %>
                   </td>
                   <td bgcolor="#ddbb99">
-                    <%= link_to '香川', reviews_path(prefecture: 37) %>
+                    <%= link_to '香川', ramen_shops_path(prefecture: 37) %>
                   </td>
                 </tr>
                 <tr height="20">
                   <td bgcolor="#ff8888">
-                    <%= link_to '沖縄', reviews_path(prefecture: 47) %>
+                    <%= link_to '沖縄', ramen_shops_path(prefecture: 47) %>
                   </td>
                   <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
                   <td bgcolor="#ddbb99">
-                    <%= link_to '高知', reviews_path(prefecture: 39) %>
+                    <%= link_to '高知', ramen_shops_path(prefecture: 39) %>
                   </td>
                   <td bgcolor="#ddbb99">
-                    <%= link_to '徳島', reviews_path(prefecture: 36) %>
+                    <%= link_to '徳島', ramen_shops_path(prefecture: 36) %>
                   </td>
                 </tr>
               </table>

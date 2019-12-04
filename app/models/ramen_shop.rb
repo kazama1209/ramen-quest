@@ -1,14 +1,10 @@
-class Review < ApplicationRecord
-  belongs_to :user
-  belongs_to :ramen_shop
-  has_many :likes, dependent: :destroy
+class RamenShop < ApplicationRecord
+  has_many :reviews, dependent: :destroy
 
-  validates :shop_name, presence: true
+  validates :name, presence: true
   validates :prefecture, presence: true
   validates :address, presence: true
-  validates :title, presence: true
-  validates :rate, presence: true
-  validates :body, presence: true
+  validates :phone, presence: true
   validates :image, presence: true
 
   enum prefecture: {

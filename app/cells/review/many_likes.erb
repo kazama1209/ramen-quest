@@ -1,6 +1,6 @@
 <div class="card bg-white border-none shadow-sm">
   <div class="card-header font-weight-bold">
-    みんなが選んだ最強ラーメンTOP3
+    いいね！の数が多いレビュー
   </div>
   <div class="card-body p-4">
     <div class="row row-eq-height">
@@ -13,7 +13,7 @@
               </div>
             	<div class="card-body">
             		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= review.shop_name %></p>
-            		<p class="fs-12">（<%= review.prefecture %> <%= review.address %>）</p>
+            		<p class="fs-12">（<%= review.prefecture %>）</p>
             	</div>
             </div>
           <% end %>

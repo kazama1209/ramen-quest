@@ -1,0 +1,240 @@
+<div class="card bg-white border-none shadow-sm mb-3">
+  <div class="card-header font-weight-bold">
+    地図から探す
+  </div>
+  <div class="card-body p-4">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <table cellspacing="0" cellpadding="6">
+          <tr>
+            <td>
+              <table width="100%" cellspacing="0" cellpadding="0" style="font-size:14px;line-height:140%;">
+                <tr valign="top">
+                  <td>
+                    <font color="#8888ff">■</font> 北海道<br>
+                    <font color="#99ddff">■</font> 東北地方<br>
+                    <font color="#ff99ff">■</font> 関東地方<br>
+                    <font color="#ccaaff">■</font> 信越地方<br> </td>
+                  <td width="20"></td>
+                  <td>
+                    <font color="#ccf577">■</font> 北陸地方<br>
+                    <font color="#ffcc88">■</font> 東海地方<br>
+                    <font color="#80f580">■</font> 近畿地方<br>
+                    <font color="#ff88bb">■</font> 中国地方<br> </td>
+                  <td width="20"></td>
+                  <td>
+                    <font color="#ddbb99">■</font> 四国地方<br>
+                    <font color="#f5e577">■</font> 九州地方<br>
+                    <font color="#ff88bb">■</font> 沖縄<br> </td>
+                  <td align="right">
+                    <table cellspacing="1" cellpadding="0">
+                      <tr height="40" style="font-size:10px;text-align:center;">
+                        <td></td>
+                        <td bgcolor="#8888ff" width="50">
+                          <%= link_to '北海道', reviews_path(prefecture: 1) %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="10"></td>
+                      </tr>
+                    </table>
+                    <table cellspacing="1" cellpadding="0" style="font-size:10px;text-align:center;margin-bottom:-1;">
+                      <tr height="25">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td width="30"></td>
+                        <td bgcolor="#99ddff" width="30">
+                          <%= link_to '青森', reviews_path(prefecture: 2) %>
+                        </td>
+                        <td width="20"></td>
+                      </tr>
+                      <tr height="40">
+                        <td></td>
+                        <td></td>
+                        <td width="30"></td>
+                        <td bgcolor="#99ddff" width="30"> 
+                          <%= link_to '秋田', reviews_path(prefecture: 5) %>
+                        </td>
+                        <td bgcolor="#99ddff">
+                          <%= link_to '岩手', reviews_path(prefecture: 3) %>
+                        </td>
+                      </tr>
+                      <tr height="35">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td bgcolor="#99ddff" width="30"> 
+                          <%= link_to '山形', reviews_path(prefecture: 6) %>
+                        </td>
+                        <td bgcolor="#99ddff">
+                          <%= link_to '宮城', reviews_path(prefecture: 4) %>
+                        </td>
+                      </tr>
+                      <tr height="25">
+                        <td bgcolor="#ccf577" width="30">
+                          <%= link_to '石川', reviews_path(prefecture: 17) %>
+                        </td>
+                        <td bgcolor="#ccf577" width="30">
+                          <%= link_to '富山', reviews_path(prefecture: 16) %>
+                        </td>
+                        <td bgcolor="#ccaaff" width="60" colspan="2">
+                          <%= link_to '新潟', reviews_path(prefecture: 15) %>
+                        </td>
+                        <td bgcolor="#99ddff" width="30">
+                          <%= link_to '福島', reviews_path(prefecture: 7) %>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <table cellspacing="1" cellpadding="0" style="font-size:10px;text-align:center;border-style:none;">
+                <tr height="25">
+                  <td bgcolor="#f5e577" width="26">
+                    <%= link_to '長崎', reviews_path(prefecture: 42) %>
+                  </td>
+                  <td bgcolor="#f5e577" width="26">
+                    <%= link_to '佐賀', reviews_path(prefecture: 41) %>
+                  </td>
+                  <td bgcolor="#f5e577" width="26"> 
+                    <%= link_to '福島', reviews_path(prefecture: 7) %>
+                  </td>
+                  <td width="10"></td>
+                  <td bgcolor="#ff88bb" width="26" rowspan="2">
+                    <%= link_to '山口', reviews_path(prefecture: 35) %>
+                  </td>
+                  <td bgcolor="#ff88bb" width="26">
+                    <%= link_to '島根', reviews_path(prefecture: 32) %>
+                  </td>
+                  <td bgcolor="#ff88bb" width="26">
+                    <%= link_to '鳥取', reviews_path(prefecture: 31) %>
+                  </td>
+                  <td bgcolor="#80f580" width="26" rowspan="2">
+                    <%= link_to '兵庫', reviews_path(prefecture: 28) %>
+                  </td>
+                  <td bgcolor="#80f580" width="30">
+                    <%= link_to '京都', reviews_path(prefecture: 26) %>
+                  </td>
+                  <td bgcolor="#80f580" width="26">
+                    <%= link_to '滋賀', reviews_path(prefecture: 25) %>
+                  </td>
+                  <td bgcolor="#ccf577" width="30">
+                    <%= link_to '福井', reviews_path(prefecture: 18) %>
+                  </td>
+                  <td bgcolor="#ccaaff" width="30" rowspan="2">
+                    <%= link_to '長野', reviews_path(prefecture: 20) %>
+                  </td>
+                  <td bgcolor="#ff99ff" width="30">
+                    <%= link_to '群馬', reviews_path(prefecture: 10) %>
+                  </td>
+                  <td bgcolor="#ff99ff" width="30">
+                    <%= link_to '栃木', reviews_path(prefecture: 9) %>
+                  </td>
+                  <td bgcolor="#ff99ff" width="30">
+                    <%= link_to '茨城', reviews_path(prefecture: 8) %>
+                  </td>
+                  <td width="20"></td>
+                </tr>
+                <tr height="25">
+                  <td></td>
+                  <td bgcolor="#f5e577">
+                    <%= link_to '熊本', reviews_path(prefecture: 43) %>
+                  </td>
+                  <td bgcolor="#f5e577">
+                     <%= link_to '大分', reviews_path(prefecture: 44) %>
+                  </td>
+                  <td></td>
+                  <td bgcolor="#ff88bb">
+                    <%= link_to '広島', reviews_path(prefecture: 34) %>
+                  </td>
+                  <td bgcolor="#ff88bb">
+                    <%= link_to '岡山', reviews_path(prefecture: 33) %>
+                  </td>
+                  <td bgcolor="#80f580"> 
+                    <%= link_to '大阪', reviews_path(prefecture: 27) %>
+                  </td>
+                  <td bgcolor="#80f580">
+                    <%= link_to '奈良', reviews_path(prefecture: 29) %>
+                  </td>
+                  <td bgcolor="#ffcc88">
+                    <%= link_to '岐阜', reviews_path(prefecture: 21) %>
+                  </td>
+                  <td bgcolor="#ff99ff">
+                    <%= link_to '山梨', reviews_path(prefecture: 19) %>
+                  </td>
+                  <td bgcolor="#ff99ff">
+                    <%= link_to '埼玉', reviews_path(prefecture: 11) %>
+                  </td>
+                  <td bgcolor="#ff99ff"> 
+                    <%= link_to '千葉', reviews_path(prefecture: 12) %>
+                  </td>
+                </tr>
+                <tr height="24">
+                  <td></td>
+                  <td bgcolor="#f5e577"> 
+                    <%= link_to '鹿児島', reviews_path(prefecture: 46) %>
+                  </td>
+                  <td bgcolor="#f5e577">
+                    <%= link_to '宮崎', reviews_path(prefecture: 45) %>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td bgcolor="#80f580"> 
+                    <%= link_to '和歌山', reviews_path(prefecture: 30) %>
+                  </td>
+                  <td bgcolor="#ffcc88">
+                    <%= link_to '三重', reviews_path(prefecture: 24) %>
+                  </td>
+                  <td bgcolor="#ffcc88">
+                    <%= link_to '愛知', reviews_path(prefecture: 23) %>
+                  </td>
+                  <td bgcolor="#ffcc88">
+                    <%= link_to '静岡', reviews_path(prefecture: 22) %>
+                  </td>
+                  <td bgcolor="#ff99ff">
+                    <%= link_to '神奈川', reviews_path(prefecture: 14) %>
+                  </td>
+                  <td bgcolor="#ff99ff">
+                    <%= link_to '東京', reviews_path(prefecture: 13) %>
+                  </td>
+                </tr>
+                <tr height="20">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td bgcolor="#ddbb99">
+                    <%= link_to '愛媛', reviews_path(prefecture: 38) %>
+                  </td>
+                  <td bgcolor="#ddbb99">
+                    <%= link_to '香川', reviews_path(prefecture: 37) %>
+                  </td>
+                </tr>
+                <tr height="20">
+                  <td bgcolor="#ff8888">
+                    <%= link_to '沖縄', reviews_path(prefecture: 47) %>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td bgcolor="#ddbb99">
+                    <%= link_to '高知', reviews_path(prefecture: 39) %>
+                  </td>
+                  <td bgcolor="#ddbb99">
+                    <%= link_to '徳島', reviews_path(prefecture: 36) %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
