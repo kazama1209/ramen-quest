@@ -1,0 +1,20 @@
+.ramen-shops {	
+  display: flex;	
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;	
+  box-sizing: border-box;	
+  box-shadow: 0 0 2px $shadow;
+  
+  .ramen-shop-image {
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    
+    img {
+      min-width: 100px;
+      max-width: 100%;
+      vertical-align: top;
+    }
+  }
+}

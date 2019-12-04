@@ -1,0 +1,31 @@
+<div class="card bg-white border-none shadow-sm">
+  <div class="card-header font-weight-bold">
+    店舗一覧
+  </div>
+  <div class="card-body p-4">
+    <div class="row">
+      <% if ramen_shops.exists? %>
+        <% ramen_shops.each do |ramen_shop| %>
+          <div class="col-md-4 col-sm-6 pb-4">
+            <%= link_to ramen_shop_path(ramen_shop) do %>
+              <div class="card">
+                <div class="card-img-top">
+                  <%= image_tag ramen_shop.image.url if ramen_shop.image? %>
+                </div>
+              	<div class="card-body">
+              		<p class="card-title font-weight-bold"><%= ramen_shop.name %>（<%= ramen_shop.prefecture %>）</p>
+              		<p class="fs-12">（<%= ramen_shop.reviews.count %>件のレビュー）</p>
+              	</div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <%= paginate ramen_shops %>
+      <% else %>
+      <div class="col-md-12">
+        <p class="text-center">まだ店舗情報が登録されていません</p>  
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -12,3 +12,58 @@
   text-align: center;
   background-color: $line;
 }
+
+.social-btn-pc {
+    margin: 30px auto;
+    text-align: center;
+    
+  .facebook {
+    background-color: $facebook;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    padding: 7px 40px;
+  }
+  
+  .twitter {
+    background-color: $twitter;
+    
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    padding: 7px 40px;
+  }
+  
+  .line {
+    background-color: $line;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    padding: 7px 40px;
+  }
+}
+
+.social-btn-sp {
+  margin: 30px auto;
+  text-align: center;
+  
+  .fa-twitter-square {
+    color: $twitter;
+  }
+  
+  .fa-facebook-square {
+    color: $facebook;
+  }
+  
+  .fa-line {
+    color: $line;
+  }
+}

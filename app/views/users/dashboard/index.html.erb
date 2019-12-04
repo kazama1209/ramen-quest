@@ -10,12 +10,12 @@
         </div>
         <p class="text-center fs-26 p-2"><%= current_user.name %></p>
         <div class="text-center">
-          <%= current_user.profile? ? current_user.profile : '自己紹介文を入力してください。' %>
+          <%= current_user.profile? ? simple_format(current_user.profile) : '自己紹介文を入力してください。' %>
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-4 order-md-1">
-    <%= render partial: 'users/shared/sidebar' %>
+    <%= render partial: 'users/shared/settings' %>
   </div>
 </div>

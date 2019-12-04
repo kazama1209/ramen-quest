@@ -1,0 +1,16 @@
+<% breadcrumb :new_review %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="text-center font-weight-bold pb-4">レビューを書く</h2>
+        <%= simple_form_for(@review, url: reviews_path, method: :post, local: true) do |f| %>
+          <%= render 'form', f: f %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/reviews/sidebar' %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<% breadcrumb :reviews %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 mb-3">
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        フリーワードから探す
+      </div>
+      <div class="card-body p-4">
+        <div class="form-inline pb-3">
+          <%= search_form_for @q do |f| %>
+            <%= f.search_field :title_or_shop_name_or_prefecture_or_address_or_body_cont, class: "form-control fa", placeholder: "\uf002 地名や店名などを入力..." %>
+            <%= f.submit "検索", class: "btn btn-primary" %>
+            <%= link_to "リセット", reviews_path, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render 'users/reviews/map' %>
+    <%= render 'users/shared/reviews', title: 'みんなのレビュー', reviews: @reviews  %>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/reviews/sidebar' %>
+  </div>
+</div>

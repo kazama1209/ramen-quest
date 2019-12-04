@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <tr>
+        <th>都道府県</th>
+        <td><%= f.input :prefecture, collection: RamenShop.prefectures.keys, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td><%= f.input :address, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>店名</th>
+        <td><%= f.input :name, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= f.input :phone, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>写真</th>
+        <td>
+          <div id="org_img_preview" class="bg-image m-0" style="background-image: url(<%= image_url("no-image.svg") %>); width: 120px; height: 120px;">
+          </div>
+          <img id="img_preview" src="#" class='d-none mb-4' style="max-width: 100%; height: 120px;" /> <br/>
+          <%= f.input :image, id: :review_img, as: :file, label: false, multiple: true, input_html: { required: true } %>
+        </td>
+      </tr>
+    </table>
+    <div class="text-center">
+      <%= f.submit class: "btn btn-danger btn-sm px-5" %>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+  
+        reader.onload = function (e) {
+          $('#org_img_preview').attr('src', e.target.result).addClass("d-none");
+          $('#img_preview').attr('src', e.target.result).removeClass("d-none");
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  
+    $("#ramen_shop_image").change(function(){
+      readURL(this);
+    });
+  });
+</script>

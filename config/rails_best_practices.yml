@@ -11,7 +11,7 @@ KeepFindersOnTheirOwnModelCheck: { }
 #LongLineCheck: { max_line_length: 80 }
 MoveCodeIntoControllerCheck: { }
 MoveCodeIntoHelperCheck: { array_count: 3 }
-MoveCodeIntoModelCheck: { use_count: 2 }
+MoveCodeIntoModelCheck: { use_count: 2, ignored_files: 'app/views/kaminari' }
 MoveFinderToNamedScopeCheck: { }
 MoveModelLogicIntoModelCheck: { use_count: 9 }
 NeedlessDeepNestingCheck: { nested_count: 2 }

@@ -1,0 +1,20 @@
+<aside>
+  <div class="card bg-white border-none shadow-sm">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        都道府県別で絞り込む <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu scrollable-menu">
+        <% (1..47).each do |n|   %>
+          <%= link_to reviews_path(prefecture: n) do %>
+            <li class="dropdown-item">
+              <%= Review.prefectures.key(n) %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+

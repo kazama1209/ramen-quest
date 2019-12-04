@@ -41,6 +41,9 @@ group :development, :test do
   gem 'rubocop', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -67,7 +70,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '>= 4.3.1'
+gem 'cells-erb'
+gem 'cells-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'simple_form'
@@ -80,12 +85,19 @@ gem 'sorcery'
 gem 'config'
 gem 'dotenv-rails'
 
-# internationalization
+# Internationalization
 gem 'rails-i18n'
 
 # Image Upload
 gem 'carrierwave'
 gem 'mini_magick'
+
+# Pagination
+gem 'kaminari'
+gem 'kaminari-i18n'
+
+# Search
+gem 'ransack'
 
 # SEO
 gem 'gretel'

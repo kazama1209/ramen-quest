@@ -2,7 +2,7 @@ crumb :root do
   link "トップページ", root_path
 end
 
-crumb :inquirie_new do
+crumb :inquiry do
   link 'お問い合わせ', new_inquiry_path
   parent :root
 end
@@ -22,14 +22,49 @@ crumb :password_reset do
   parent :login
 end
 
-crumb :about_privacy do
+crumb :privacy do
   link 'プライバシーポリシー', privacy_path
   parent :root
 end
 
-crumb :about_terms do
+crumb :terms do
   link '利用規約', terms_path
   parent :root
+end
+
+crumb :reviews do
+  link 'みんなのレビュー', reviews_path
+  parent :root
+end
+
+crumb :ramen_shops do
+  link 'ラーメンデータベース', ramen_shops_path
+  parent :root
+end
+
+crumb :new_ramen_shop do
+  link '店舗情報追加', new_ramen_shop_path
+  parent :ramen_shops
+end
+
+crumb :show_ramen_shop do |ramen_shop|
+  link "#{ramen_shop.name}（#{ramen_shop.prefecture}）", ramen_shop_path(ramen_shop)
+  parent :ramen_shops
+end
+
+crumb :ranking do
+  link 'ランキング', ranking_index_path
+  parent :root
+end
+
+crumb :new_review do
+  link 'レビューを書く', new_review_path
+  parent :reviews
+end
+
+crumb :show_review do |review|
+  link "#{review.shop_name}（#{review.prefecture}）", review_path(review)
+  parent :reviews
 end
 
 crumb :admin_root do
@@ -39,6 +74,11 @@ end
 crumb :mypage_dashbord do
   link 'マイページ', dashboard_index_path
   parent :root
+end
+
+crumb :mypage_review do
+  link '自分のレビュー', mypage_review_path
+  parent :mypage_dashbord
 end
 
 crumb :mypage_profile do

@@ -1,0 +1,41 @@
+<div class="card bg-white border-none shadow-sm">
+  <div class="card-header font-weight-bold">
+    <%= title %>
+  </div>
+  <div class="card-body p-4">
+    <% if reviews.exists? %>
+      <% reviews.each do |review| %>
+        <%= link_to review_path(review) do %>
+          <div class="reviews">
+            <div class="review-image">
+              <%= image_tag review.image.url if review.image? %>
+            </div>
+            <div class="review-content">
+              <h2 class="fs-22 font-weight-bold">
+                <%= review.shop_name %>（<%= review.prefecture %>）
+              </h2>
+              <div id="review-rate-<%= review.id %>"></div>
+              <script>
+                $('#review-rate-<%= review.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= review.rate %>,
+                });
+              </script>
+              <p class="my-2"><u><%= review.title %></u></p>
+              <p class="fs-12 mb-2"><%= truncate(review.body, length: 40) %></p>
+              <p class="mb-0"><%= review.created_at.strftime("%Y年%m月%d日") %>投稿 by <%= review.user.name %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%= paginate reviews %>
+    <% else %>
+      <p class="text-center">まだレビューがありません</p>
+    <% end %>
+  </div>
+</div>

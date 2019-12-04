@@ -1,0 +1,9 @@
+<% breadcrumb :mypage_review %>
+<div class="row pt-3 pb-5">
+  <div class="col-sm-8 order-md-2 mb-3">
+    <%= render 'users/shared/reviews', title: '自分のレビュー', reviews: current_user.reviews.page(params[:page]).order(created_at: :desc) %>
+  </div>
+  <div class="col-sm-4 order-md-1">
+    <%= render partial: 'users/shared/settings' %>
+  </div>
+</div>
