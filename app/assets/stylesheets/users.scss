@@ -10,7 +10,7 @@
 @import 'users/home';
 @import 'users/mypage';
 @import 'users/review';
-
+@import 'users/articles';
 
 /* universal */
 
@@ -31,6 +31,10 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100\vh;
+}
+
+.image-box img{
+  max-width: 100%;
 }
 
 footer {

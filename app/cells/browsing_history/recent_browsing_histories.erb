@@ -1,0 +1,14 @@
+<div class="card bg-white border-none shadow-sm">
+  <div class="card-header font-weight-bold">
+    最近チェックした店
+  </div>
+  <div class="card-body p-0">
+    <% @browsing_histories.each do |browsing_history| %>
+      <div class="list-group list-group-flush">
+        <%= link_to ramen_shop_path(browsing_history.ramen_shop_id) do %>
+          <div class="list-group-item"><%= browsing_history.ramen_shop.name %>（<%= browsing_history.ramen_shop.prefecture %>）</div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

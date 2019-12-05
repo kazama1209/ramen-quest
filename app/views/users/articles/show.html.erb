@@ -1,0 +1,39 @@
+<% breadcrumb :article, @article.title %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 article-container mb-3">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-body p-4">
+        <span class="badge badge-primary mb-2"><%= @article.category %></span>
+        <h1 class="text-center font-weight-bold"><%= simple_format(@article.title) %></h1>
+        <p class="text-right"><%= @article.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <div class="text-center">
+          <%= image_tag @article.image.medium.url if @article.image? %>
+        </div>
+        <%= render 'users/shared/social_button', model: @article %>
+        <%= simple_format(@article.body) %>
+        <% if @related_articles.any? %>
+          <div class="card mt-5">
+            <div class="card-header">関連記事</div>
+            <div class="card-body">
+              <ul>
+                <% @related_articles.each do |related_article| %>
+                  <li>
+                    <%= link_to article_path(related_article) do %>
+                      <%= related_article.title %>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>
+<script>
+  $(".medium-insert-buttons").remove()
+</script>

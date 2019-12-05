@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="d-flex align-items-center pb-2">
+            <h1 class="m-0 text-dark">記事</h1>
+            <div class="ml-auto">
+              <%= link_to "新規作成", new_admins_article_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary card-outline">
+            <div class="card-body">
+              <% if @articles %>
+                <table class="table table-bordered">
+                  <thead>
+                  <tr>
+                    <th>日時</th>
+                    <th>タイトル</th>
+                    <th>操作</th>
+                  </tr>
+                  </thead>
+                  <% @articles.each do |article| %>
+                    <tr>
+                      <td><%= article.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+                      <td><%= article.title %></td>
+                      <td>
+                        <%= link_to '編集', edit_admins_article_path(article), class: 'btn btn-primary' %>
+                        <%= link_to '削除', admins_article_path(article), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </table>
+                <%= paginate @articles %>
+              <% else %>
+                <p>まだ記事がありません</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

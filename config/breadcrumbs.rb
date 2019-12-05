@@ -7,6 +7,11 @@ crumb :inquiry do
   parent :root
 end
 
+crumb :inquiry_completed do
+  link '受付完了', new_inquiry_path
+  parent :inquiry
+end
+
 crumb :signup do
   link 'ユーザー登録', new_signup_path
   parent :root
@@ -47,13 +52,29 @@ crumb :new_ramen_shop do
   parent :ramen_shops
 end
 
-crumb :show_ramen_shop do |ramen_shop|
+crumb :ramen_shop do |ramen_shop|
   link "#{ramen_shop.name}（#{ramen_shop.prefecture}）", ramen_shop_path(ramen_shop)
   parent :ramen_shops
 end
 
 crumb :ranking do
   link 'ランキング', ranking_index_path
+  parent :root
+end
+
+crumb :articles do
+  link 'イベント・ニュース', articles_path
+  parent :root
+end
+
+crumb :article do |article_title|
+  link article_title, article_path
+  parent :articles
+end
+
+
+crumb :informations do
+  link 'お知らせ', informations_path
   parent :root
 end
 

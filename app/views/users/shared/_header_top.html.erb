@@ -1,17 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
   <div class="container">
-    <%= link_to "全国ラーメン図鑑", root_path, class: "navbar-brand" %>
+    <%= link_to "ら～めんクエスト", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <% if logged_in? %>
-          <li class="nav-item">
-            <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
-              <i class="fas fa-user"></i> マイページ
-            <% end %>
-          </li>
+          <% if current_user.admin? %>
+            <li class="nav-item">
+              <%= link_to admins_dashboard_index_path, class: "nav-link text-white" do %>
+                <i class="fas fa-hammer"></i> 管理画面
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
+                <i class="fas fa-user"></i> マイページ
+              <% end %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to logout_path, method: :delete, class: "nav-link text-white" do %>
               <i class="fas fa-sign-out-alt"></i> ログアウト

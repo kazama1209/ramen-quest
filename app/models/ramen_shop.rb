@@ -1,5 +1,6 @@
 class RamenShop < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_many :browsing_histories, dependent: :destroy
 
   validates :name, presence: true
   validates :prefecture, presence: true

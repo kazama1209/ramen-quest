@@ -1,0 +1,16 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row p-2">
+      <div class="col-md-12">
+        <div class="card bg-white border-none">
+          <div class="card-body p-4">
+            <h2 class="text-center font-weight-bold pb-4">記事の編集</h2>
+            <%= simple_form_for(@article, url: admins_article_path(@article), method: :patch, local: true) do |f| %>
+              <%= render 'form', f: f %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

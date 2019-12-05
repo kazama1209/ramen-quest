@@ -1,0 +1,25 @@
+<% breadcrumb :informations %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        お知らせ一覧
+      </div>
+      <div class="card-body p-0">
+        <% @informations.each do |information| %>
+          <div class="list-group list-group-flush">
+            <div class="list-group-item">
+              <p class="text-info font-weight-bold"><%= information.title %></p>
+              <p><%= simple_format(information.body) %></p>
+              <p><%= image_tag information.image.medium.url if information.image? %></p>
+              <p class="text-right"><%= information.created_at.strftime("%Y年%m月%d日") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<% breadcrumb :articles %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 mb-3">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        イベント・ニュース
+      </div>
+      <div class="card-body p-4">
+        <%= render 'articles', articles: @articles  %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>

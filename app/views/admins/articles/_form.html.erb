@@ -1,0 +1,47 @@
+<%= f.input :category, collection: Article.categories.keys %>
+<%= f.input :description %>
+<%= f.input :title %>
+<%= f.label :body %>
+<%= f.text_area :body, class: 'editable siimple-textarea siimple-textarea--fluid' %>
+<%= f.input :image, as: :file %>
+<div class="text-center">
+  <%= f.submit class: 'btn btn-danger btn-sm mt-4 px-5' %>
+</div>
+<script>
+  $(document).ready(function(){
+      var editor = new MediumEditor('.editable', {
+        toolbar: {
+          buttons: [
+              'bold',
+              'italic',
+              'underline',
+              'h2',
+              'h3',
+              'h4',
+              'h5',
+              'quote',
+              'html',
+              'anchor'
+          ]
+        },
+        imageDragging: false,
+        placeholder: {
+          text: '',
+          hideOnClick: true
+        },
+      });
+  
+      $('.editable').mediumInsert({
+        editor: editor,
+        addons: {
+          images: {
+            fileUploadOptions: {
+              url: "<%= api_article_image_index_path %>",
+              type: 'post',
+              acceptFileTypes: /(.|\/)(gif|jpe?g|png)$/i
+            }
+          }
+        }
+      });
+    });
+</script>

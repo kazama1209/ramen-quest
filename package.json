@@ -1,5 +1,7 @@
 {
   "name": "ramen",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "admin-lte": "3.0.0-alpha.2"
+  }
 }

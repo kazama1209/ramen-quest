@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row p-2">
+      <div class="col-md-12">
+        <div class="card bg-white border-none">
+          <div class="card-body p-4">
+            <h2 class="text-center font-weight-bold pb-4">ユーザー情報の変更</h2>
+             <%= simple_form_for(@user, url: admins_user_path, method: :patch) do |f| %>
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th>名前</th>
+                      <td><%= f.input :name, label: false %></td>
+                    </tr>
+                    <tr>
+                      <th>メールアドレス</th>
+                      <td><%= f.input :email, label: false %></td>
+                    </tr>
+                  </table>
+                  <div class="text-center">
+                    <%= f.submit class: "btn btn-danger btn-sm px-5" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

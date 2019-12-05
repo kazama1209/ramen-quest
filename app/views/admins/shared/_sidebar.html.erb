@@ -1,0 +1,41 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <%= link_to root_path, class: "brand-link" do %>
+    ら～めんクエスト
+  <% end %>
+  <div class="sidebar">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admins_dashboard_index_path, class: 'nav-link' do %>
+            <i class="nav-icon fas fa-tachometer-alt"></i> ダッシュボード
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admins_users_path, class: 'nav-link' do %>
+            <i class="nav-icon fa fa-user"></i> ユーザー
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admins_articles_path, class: 'nav-link' do %>
+            <i class="nav-icon fas fa-edit"></i> 記事
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admins_informations_path, class: 'nav-link' do %>
+            <i class="nav-icon fas fa-newspaper"></i> お知らせ
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admins_inquiries_path, class: 'nav-link' do %>
+            <i class="nav-icon fas fa-mail-bulk"></i> 問い合わせ
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admins_opinions_path, class: 'nav-link' do %>
+            <i class="nav-icon fas fa-box-open"></i> 意見・要望
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

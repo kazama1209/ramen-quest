@@ -1,0 +1,17 @@
+<div class="row">
+  <% articles.each do |article| %>
+    <div class="articles col-md-4 col-sm-6 pb-4">
+      <%= link_to article_path(article) do %>
+        <div class="card">
+          <div class="card-img-top">
+            <%= image_tag article.image.url if article.image? %>
+          </div>
+        	<div class="card-body">
+        		<h3 class="card-title"><%= truncate(article.title, length: 32) %></h3>
+        	</div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<%= paginate articles %>

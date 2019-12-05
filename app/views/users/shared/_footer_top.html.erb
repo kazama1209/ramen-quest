@@ -5,47 +5,52 @@
         <div class="col-md-3">
           <p class="font-weight-bold">ご利用ガイド</p>
           <p class="fs-14">
-            <%= link_to "#" do %>
-              登録の流れ
-            <% end %>
+            <%= link_to '登録の流れ', "#" %>
           </p>
           <p class="fs-14">
-            <%= link_to "#" do %>
-              よくある質問
-            <% end %>
+            <%= link_to 'よくある質問', "#" %>
           </p>
           <p class="fs-14">
-            <%= link_to "#" do %>
-              お知らせ
-            <% end %>
+            <%= link_to 'お知らせ', informations_path %>
           </p>
         </div>
         <div class="col-md-3">
-          <p class="font-weight-bold">ブログ</p>
+          <p class="font-weight-bold">イベント情報</p>
           <p class="fs-14">
-            <%= link_to "#", target: "_blank" do %>
-              カテゴリー1
-            <% end %>
+            <%= link_to '割引キャンペーン', articles_path(category: 1) %>
           </p>
           <p class="fs-14">
-            <%= link_to "#", target: "_blank" do %>
-              カテゴリー2
-            <% end %>
-          </p>
-          <p class="fs-14">
-            <%= link_to "#", target: "_blank" do %>
-              カテゴリー3
-            <% end %>
+            <%= link_to '新店オープン', articles_path(category: 2) %>
           </p>
         </div>
         <div class="col-md-3">
           <p class="font-weight-bold">サイト情報</p>
           <p class="fs-14">
-            <%= link_to "#", target: "_blank" do %>
-              運営会社
-            <% end %>
+            <%= link_to '運営会社', "#" %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '利用規約', '#' %>
+          </p>
+          <p class="fs-14">
+            <%= link_to 'プライバシーポリシー', '#' %>
           </p>
         </div>
+        <div class="col-md-3">
+          <div class="rounded bg-white text-center p-3 mb-3">
+            <p class="font-weight-bold fs-16">ご意⾒・ご要望</p>
+            <%= simple_form_for Opinion.new, url: opinions_path, method: :post, local: true do |f| %>
+              <%= f.input :content, input_html: { rows: 4 }, label: false, placeholder: 'サービスに関するご意見・ご要望をお待ちしております。'  %>
+              <%= f.submit '送信', class: "btn btn-danger w-100" %>
+            <% end %>
+          </div>
+          
+          <div class="rounded bg-white text-center p-3">
+            <p class="font-weight-bold fs-16">返信・サポートが必要な場合はこちら</p>
+            <%= link_to 'お問い合わせ', new_inquiry_path, class: "btn btn-secondary w-100" %>
+          </div>
+          
+        </div>
+        
       </div>
     </div>
   </div>

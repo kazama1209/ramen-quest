@@ -9,7 +9,7 @@ class Users::LoginController < Users::ApplicationController
     tmp_params = login_params
     if login(tmp_params[:email], tmp_params[:password])
       flash[:success] = 'ログインに成功しました'
-      redirect_to dashboard_index_path
+      go_to_dashboard
     else
       flash.now[:danger] = 'メールアドレスまたはパスワードが間違っています'
       render :new
