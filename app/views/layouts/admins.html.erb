@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ら～めんクエスト</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@3.0.0/dist/siimple.min.css">
+    <%= stylesheet_link_tag    'admins', media: 'all' %>
+    <%= javascript_include_tag 'admins' %>
+  </head>
+  <body>
+    <%= render 'admins/shared/header' %>
+    <%= render 'admins/shared/sidebar' %>
+    <%= yield %>
+    <%= render 'admins/shared/footer' %>
+  </body>
+</html>

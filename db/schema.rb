@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_175641) do
+ActiveRecord::Schema.define(version: 2019_12_05_120114) do
+
+  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category", default: 0
+    t.text "description"
+    t.string "title"
+    t.text "body"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -21,6 +31,32 @@ ActiveRecord::Schema.define(version: 2019_12_03_175641) do
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
 
+  create_table "browsing_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "ramen_shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ramen_shop_id"], name: "index_browsing_histories_on_ramen_shop_id"
+    t.index ["user_id"], name: "index_browsing_histories_on_user_id"
+  end
+
+  create_table "information", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inquiries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "kana", null: false
+    t.string "email", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "review_id"
@@ -28,6 +64,12 @@ ActiveRecord::Schema.define(version: 2019_12_03_175641) do
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_likes_on_review_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "opinions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ramen_shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_175641) do
     t.string "name"
     t.text "profile"
     t.string "image"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "activation_state"
@@ -77,6 +120,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_175641) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "browsing_histories", "ramen_shops"
+  add_foreign_key "browsing_histories", "users"
   add_foreign_key "likes", "reviews"
   add_foreign_key "likes", "users"
   add_foreign_key "reviews", "ramen_shops"

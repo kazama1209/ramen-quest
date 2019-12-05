@@ -1,0 +1,58 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="d-flex align-items-center pb-2">
+            <h1 class="m-0 text-dark">ユーザー</h1>
+            <div class="ml-auto">
+              <%= link_to "新規作成", new_admins_user_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card card-primary card-outline">
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>名前</th>
+                  <th>メールアドレス</th>
+                  <th>プロフィール</th>
+                  <th>操作</th>
+                </tr>
+                </thead>
+                <% @users.each do |user| %>
+                  <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= truncate(user.profile, length: 50) %></td>
+                    <td>
+                      <%= link_to '編集', edit_admins_user_path(user), class: 'btn btn-primary' %>
+                      <%= link_to '削除', admins_user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+              <%= paginate @users %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

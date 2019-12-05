@@ -7,7 +7,21 @@ Rails.application.routes.draw do
   get :login, to: 'users/login#new'
   delete :logout, to: 'users/login#destroy'
   
+  namespace :api do
+    resources :article_image, only: %i[create]
+  end
+  
   scope module: :users do
+    resources :informations, only: %i[index]
+    resources :articles, only: %i[index show]
+    
+    resources :opinions, only: %i[create]
+    resources :inquiries, only: %i[new create] do
+      collection do
+        get :complete
+      end
+    end
+    
     resources :login, only: %i[create]
     
     post 'oauth/callback' => 'oauths#callback'
@@ -48,6 +62,16 @@ Rails.application.routes.draw do
         patch :reset
       end
     end
+  end
+  
+  namespace :admins do
+    resources :dashboard, only: %i[index]
+    resources :users, only: %i[index new create edit update destroy]
+    resources :inquiries, only: %i[index show]
+    resources :opinions, only: %i[index]
+    resources :notifications, only: %i[index]
+    resources :articles, only: %i[index new create edit update destroy]
+    resources :informations, only: %i[index new create edit update destroy]
   end
   
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?

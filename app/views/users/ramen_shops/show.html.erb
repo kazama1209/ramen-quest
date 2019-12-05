@@ -1,4 +1,4 @@
-<% breadcrumb :show_ramen_shop, @ramen_shop %>
+<% breadcrumb :ramen_shop, @ramen_shop %>
 <div class="row pt-3 pb-5">
   <div class="col-md-8 mb-3">
     <div class="card bg-white border-none shadow-sm mb-3">
@@ -19,7 +19,9 @@
           <% end %>
         </div>
         <div class="text-center">
-          <%= image_tag @ramen_shop.image.medium.url if @ramen_shop.image? %>
+          <div class="image-box">
+            <%= image_tag @ramen_shop.image.medium.url if @ramen_shop.image? %>
+          </div>
         </div>
         <div class="mt-4">
           <table class="table table-bordered">
@@ -43,7 +45,7 @@
         </div>
       </div>
     </div>
-    <%= render 'users/shared/reviews', title: 'この店のレビュー', reviews: @reviews  %>
+    <%= render 'users/shared/reviews', title: 'この店のレビュー', reviews_count: @ramen_shop.reviews.count, reviews: @reviews  %>
     <div class="card bg-white border-none shadow-sm mt-3">
       <div class="card-body p-4">
         <p class="text-center font-weight-bold fs-16">レビューを書く</p>
@@ -54,6 +56,6 @@
     </div>
   </div>
   <div class="col-md-4">
-    <%= render 'users/ramen_shops/sidebar' %>
+    <%= render 'users/shared/sidemenu' %>
   </div>
 </div>

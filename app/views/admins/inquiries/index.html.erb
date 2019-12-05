@@ -1,0 +1,56 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <h1 class="m-0 text-dark pb-2">問い合わせ</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card card-primary card-outline">
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>日時</th>
+                  <th>名前</th>
+                  <th>ふりがな</th>
+                  <th>メールアドレス</th>
+                  <th>問い合わせ内容</th>
+                </tr>
+                </thead>
+                <% @inquiries.each do |inquiry| %>
+                  <tr>
+                    <td><%= inquiry.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+                    <td><%= inquiry.name %></td>
+                    <td><%= inquiry.kana %></td>
+                    <td><%= inquiry.email %></td>
+                    <td>
+                      <%= truncate(inquiry.content, length: 30) do %>
+                        <%= link_to "（続きを読む）", admins_inquiry_path(inquiry) %>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+              <%= paginate @inquiries %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

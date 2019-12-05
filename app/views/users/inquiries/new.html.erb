@@ -1,0 +1,72 @@
+<% breadcrumb :inquiry %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 offset-md-2">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="text-center font-weight-bold pb-4">お問い合わせ</h2>
+        <%= simple_form_for @inquiry, url: inquiries_path, method: :post, local: true do |f| %>
+          <div class="row mx-0 bg-white border-bottom">
+            <div class="col-md-3 col-12 pc-bg-light pt-4">
+              <div class="d-md-block d-none">
+                <label class="fs-14">氏名</label>
+                <div class="d-inline-block float-right"><label class="badge badge-danger">必須</label></div>
+              </div>
+              <div class="d-md-none d-sm-block">
+                <label class="fs-14">氏名</label><label class="badge badge-danger ml-2">必須</label>
+              </div>
+            </div>
+            <div class="col-md-9 col-12 py-3">
+              <%= f.input :name, required: true, placeholder: '⼭⽥ 太郎', label: false, wrapper_html: {class: "mb-0"} %>
+            </div>
+          </div>
+          <div class="row mx-0 bg-white border-bottom">
+            <div class="col-md-3 col-12 pc-bg-light pt-4">
+              <div class="d-md-block d-none">
+                <label class="fs-14">ふりがな</label>
+                <div class="d-inline-block float-right"><label class="badge badge-danger">必須</label></div>
+              </div>
+              <div class="d-md-none d-sm-block">
+                <label class="fs-14">ふりがな</label><label class="badge badge-danger ml-2">必須</label>
+              </div>
+            </div>
+            <div class="col-md-9 col-12 py-3">
+              <%= f.input :kana, required: true, placeholder: 'やまだ たろう', label: false, wrapper_html: {class: "mb-0"} %>
+            </div>
+          </div>
+          
+          <div class="row mx-0 bg-white border-bottom">
+            <div class="col-md-3 col-12 pc-bg-light pt-4">
+              <div class="d-md-block d-none">
+                <label class="fs-14">メールアドレス</label>
+                <div class="d-inline-block float-right"><label class="badge badge-danger">必須</label></div>
+              </div>
+              <div class="d-md-none d-sm-block">
+                <label class="fs-14">メールアドレス</label><label class="badge badge-danger ml-2">必須</label>
+              </div>
+            </div>
+            <div class="col-md-9 col-12 py-3">
+              <%= f.input :email, as: :email, required: true, placeholder: 'example@xxxxx.com', label: false, wrapper_html: {class: "mb-0"} %>
+            </div>
+          </div>
+          <div class="row mx-0 bg-white border-bottom">
+            <div class="col-md-3 col-12 pc-bg-light pt-4">
+              <div class="d-md-block d-none">
+                <label class="fs-14">お問い合わせ内容</label>
+                <div class="d-inline-block float-right"><label class="badge badge-danger">必須</label></div>
+              </div>
+              <div class="d-md-none d-sm-block">
+                <label class="fs-14">お問い合わせ内容</label><label class="badge badge-danger ml-2">必須</label>
+              </div>
+            </div>
+            <div class="col-md-9 col-12 py-3">
+              <%= f.text_area :content, class: 'form-control', rows: '4', required: true %>
+            </div>
+          </div>
+          <div class="text-center pt-3">
+            <%= f.submit "送信する", data: { confirm: "入力内容に間違いはありませんか？"}, class: "btn btn-danger px-5" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

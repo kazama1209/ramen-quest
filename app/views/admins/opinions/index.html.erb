@@ -1,0 +1,46 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <h1 class="m-0 text-dark pb-2">意見・要望</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card card-primary card-outline">
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>日時</th>
+                  <th>内容</th>
+                </tr>
+                </thead>
+                <% @opinions.each do |opinion| %>
+                  <tr>
+                    <td><%= opinion.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+                    <td><%= opinion.content %></td>
+                  </tr>
+                <% end %>
+              </table>
+              <%= paginate @opinions %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

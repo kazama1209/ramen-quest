@@ -88,6 +88,10 @@ gem 'dotenv-rails'
 # Internationalization
 gem 'rails-i18n'
 
+# Editor
+gem 'medium-editor-insert-plugin-rails'
+gem 'medium-editor-rails'
+
 # Image Upload
 gem 'carrierwave'
 gem 'mini_magick'

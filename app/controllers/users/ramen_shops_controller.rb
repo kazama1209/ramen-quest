@@ -10,6 +10,22 @@ class Users::RamenShopsController < Users::ApplicationController
 
   def show
     @reviews = @ramen_shop.reviews.includes(:user).page(params[:page]).order(created_at: :desc)
+    
+    return unless logged_in?
+    
+    new_browsing_history = @ramen_shop.browsing_histories.build(user_id: current_user.id)
+
+    if current_user.browsing_histories.exists?(ramen_shop_id: params[:id])
+      old_browsing_history = current_user.browsing_histories.find_by(ramen_shop_id: params[:id])
+      old_browsing_history.destroy
+    end
+
+    new_browsing_history.save
+
+    browsing_histories = current_user.browsing_histories.all
+    browsing_stock_limit = 5
+
+    browsing_histories[0].destroy if browsing_histories.count > browsing_stock_limit
   end
 
   def new

@@ -22,9 +22,11 @@
         </div>
         <div id="review-rate-<%= @review.id %>" class="text-center mt-2 mb-4"></div>
         <div class="text-center">
-          <%= image_tag @review.image.medium.url if @review.image? %>
+          <div class="image-box">
+            <%= image_tag @review.image.medium.url if @review.image? %>
+          </div>
         </div>
-        <%= render 'users/shared/social_button', review: @review %>
+        <%= render 'users/shared/social_button', model: @review %>
         <h2><%= @review.title %></h2>
         <div class="p-2">
           <p class="text-info font-weight-bold"><%= @review.created_at.strftime("%Y年%m月%d日") %>投稿</p>
@@ -49,7 +51,7 @@
     </div>
   </div>
   <div class="col-md-4">
-    <%= render 'users/reviews/sidebar' %>
+    <%= render 'users/shared/sidemenu' %>
   </div>
 </div>
 <script>

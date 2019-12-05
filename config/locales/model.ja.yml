@@ -15,3 +15,7 @@ ja:
         rate: '評価'
         body: '本文'
         image: '画像'
+      information:
+        title: 'タイトル'
+        body: '本文'
+        image: '画像'

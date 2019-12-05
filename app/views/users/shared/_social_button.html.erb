@@ -1,16 +1,16 @@
 <div class='social-btn-pc d-sm-block d-none'>
-  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}&text=#{review.title}", class: 'twitter btn', title: 'Twitter', target: '_blank' %>
-  <%= link_to 'Facebook', "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=#{review.title}", class: 'facebook btn', title: 'Facebook', target: '_blank' %>
-  <%= link_to 'LINE', "http://line.me/R/msg/text/?#{request.url}&text=#{review.title}", class: 'line btn', title: 'LINE', target: '_blank' %>
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}&text=#{model.title}", class: 'twitter btn', title: 'Twitter', target: '_blank' %>
+  <%= link_to 'Facebook', "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=#{model.title}", class: 'facebook btn', title: 'Facebook', target: '_blank' %>
+  <%= link_to 'LINE', "http://line.me/R/msg/text/?#{request.url}&text=#{model.title}", class: 'line btn', title: 'LINE', target: '_blank' %>
 </div>
 <div class="social-btn-sp d-block d-sm-none">
-  <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{review.title}", title: "Facebookでシェア", target: "_blank" do %>
+  <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{model.title}", title: "Facebookでシェア", target: "_blank" do %>
     <i class="fab fa-twitter-square fa-2x"></i>
   <% end %>
-  <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=#{review.title}", title: "twitterでシェア", target: "_blank" do %>
+  <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=#{model.title}", title: "twitterでシェア", target: "_blank" do %>
     <i class="fab fa-facebook-square fa-2x mx-2"></i>
   <% end %>
-  <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=#{review.title}", title: "LINEでシェア", target: "_blank" do %>
+  <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=#{model.title}", title: "LINEでシェア", target: "_blank" do %>
     <i class="fab fa-line fa-2x"></i>
   <% end %>
 </div>
