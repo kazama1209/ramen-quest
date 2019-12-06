@@ -97,8 +97,13 @@ crumb :mypage_dashbord do
   parent :root
 end
 
-crumb :mypage_review do
-  link '自分のレビュー', mypage_review_path
+crumb :mypage_reviews do
+  link 'レビュー', mypage_reviews_path
+  parent :mypage_dashbord
+end
+
+crumb :mypage_bookmarks do
+  link 'ブックマーク', mypage_reviews_path
   parent :mypage_dashbord
 end
 

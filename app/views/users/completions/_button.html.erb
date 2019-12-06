@@ -1,0 +1,11 @@
+<% if logged_in? %>
+  <% if current_user.completions.find_by(ramen_shop_id: ramen_shop.id) %>
+    <%= link_to ramen_shop_completion_path(ramen_shop), method: :delete, class: "btn btn-success btn-sm" do %>
+      <i class="fas fa-flag"></i> 攻略済み
+    <% end %>
+  <% else %>
+    <%= link_to ramen_shop_completions_path(ramen_shop), method: :post, class: "btn btn-danger btn-sm" do %>
+      <i class="far fa-flag"></i> 未攻略
+    <% end %>
+  <% end %>
+<% end %>

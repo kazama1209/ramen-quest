@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :completions, dependent: :destroy
   has_many :browsing_histories, dependent: :destroy
 
   authenticates_with_sorcery! do |config|

@@ -1,0 +1,11 @@
+<% if logged_in? %>
+  <% if current_user.bookmarks.find_by(ramen_shop_id: ramen_shop.id) %>
+    <%= link_to ramen_shop_bookmark_path(ramen_shop), method: :delete, class: "btn btn-warning text-white btn-sm" do %>
+      <i class="fas fa-bookmark"></i> ブックマーク済み
+    <% end %>
+  <% else %>
+    <%= link_to ramen_shop_bookmarks_path(ramen_shop), method: :post, class: "btn btn-warning text-white btn-sm" do %>
+      <i class="far fa-bookmark"></i> ブックマーク
+    <% end %>
+  <% end %>
+<% end %>

@@ -43,6 +43,8 @@
             </tr>
           </table>
         </div>
+        <%= render 'users/bookmarks/button', ramen_shop: @ramen_shop %>
+        <%= render 'users/completions/button', ramen_shop: @ramen_shop %>
       </div>
     </div>
     <%= render 'users/shared/reviews', title: 'この店のレビュー', reviews_count: @ramen_shop.reviews.count, reviews: @reviews  %>
