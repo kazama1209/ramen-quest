@@ -98,6 +98,7 @@ gem 'medium-editor-rails'
 
 # Image Upload
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 
 # Pagination
