@@ -5,3 +5,9 @@ mail:
   activation_needed: 'ユーザー登録のご案内'
   activation_success:  'ユーザー登録完了のご案内'
   reset_password: 'パスワード再設定手続きのご案内'
+  
+aws:
+  s3_bucket: <%= ENV['AWS_S3_BUCKET'] %>
+  secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  key: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  region: <%= ENV['AWS_REGION'] %> 
