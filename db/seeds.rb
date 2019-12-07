@@ -3,10 +3,9 @@ User.create!(
   email: 'admin@gmail.com',
   password: '12341234',
   password_confirmation: '12341234',
-  role: :admin,
   name: '管理人',
   profile: 'よろしくお願いします。',
-  gender: 'female',
+  role: :admin,
   image: File.open("#{Rails.root}/db/fixtures/images/0.png"),
 )
 
@@ -26,9 +25,9 @@ User.create!(
   email: 'user2@gmail.com',
   password: '12341234',
   password_confirmation: '12341234',
-  role: :user,
   name: '田中',
   profile: 'よろしくお願いします。',
+  role: :user,
   image: File.open("#{Rails.root}/db/fixtures/images/2.png"),
 )
 
@@ -37,9 +36,9 @@ User.create!(
   email: 'user3@gmail.com',
   password: '12341234',
   password_confirmation: '12341234',
-  role: :user,
   name: '鈴木',
   profile: 'よろしくお願いします。',
+  role: :user,
   image: File.open("#{Rails.root}/db/fixtures/images/3.png"),
 )
 
