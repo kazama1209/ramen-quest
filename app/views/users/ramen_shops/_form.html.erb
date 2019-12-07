@@ -2,16 +2,16 @@
   <div class="col-md-12">
     <table class="table table-bordered">
       <tr>
+        <th>店名</th>
+        <td><%= f.input :name, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
         <th>都道府県</th>
         <td><%= f.input :prefecture, collection: RamenShop.prefectures.keys, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
         <th>所在地</th>
         <td><%= f.input :address, label: false, input_html: { required: true } %></td>
-      </tr>
-      <tr>
-        <th>店名</th>
-        <td><%= f.input :name, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
         <th>電話番号</th>

@@ -43,7 +43,7 @@ crumb :reviews do
 end
 
 crumb :ramen_shops do
-  link 'ラーメンデータベース', ramen_shops_path
+  link 'データベース', ramen_shops_path
   parent :root
 end
 
@@ -63,7 +63,7 @@ crumb :ranking do
 end
 
 crumb :articles do
-  link 'イベント・ニュース', articles_path
+  link 'ニュース', articles_path
   parent :root
 end
 
@@ -97,8 +97,18 @@ crumb :mypage_dashbord do
   parent :root
 end
 
-crumb :mypage_review do
-  link '自分のレビュー', mypage_review_path
+crumb :mypage_reviews do
+  link 'レビュー', mypage_reviews_path
+  parent :mypage_dashbord
+end
+
+crumb :mypage_bookmarks do
+  link 'ブックマーク', mypage_reviews_path
+  parent :mypage_dashbord
+end
+
+crumb :mypage_events do
+  link 'イベント', mypage_events_path
   parent :mypage_dashbord
 end
 

@@ -6,8 +6,18 @@
       <% end %>
     </li>
     <li class="list-group-item list-group-item-action p-0">
-      <%= link_to mypage_review_path(current_user), class: "d-block p-3" do %>
+      <%= link_to mypage_reviews_path(current_user), class: "d-block p-3" do %>
         <i class="fas fa-star"></i> レビュー
+      <% end %>
+    </li>
+    <li class="list-group-item list-group-item-action p-0">
+      <%= link_to mypage_bookmarks_path(current_user), class: "d-block p-3" do %>
+        <i class="fas fa-bookmark"></i> ブックマーク
+      <% end %>
+    </li>
+    <li class="list-group-item list-group-item-action p-0">
+      <%= link_to mypage_events_path(current_user), class: "d-block p-3" do %>
+        <i class="fas fa-calendar-week"></i> イベント
       <% end %>
     </li>
     <li class="list-group-item list-group-item-action p-0">

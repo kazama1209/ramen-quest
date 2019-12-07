@@ -34,7 +34,10 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :ramen_shops, except: %i[destroy]
+    resources :ramen_shops, except: %i[destroy] do
+      resources :bookmarks, only: %i[create destroy]
+      resources :completions, only: %i[create destroy]
+    end
     
     resources :reviews, except: %i[new] do
       resources :likes, only: %i[create destroy]
@@ -43,7 +46,9 @@ Rails.application.routes.draw do
     resources :ranking, only: %i[index]
     
     namespace :mypage do
-      get :review
+      get :reviews
+      get :bookmarks
+      get :events
       get :profile
       get :email
       get :password
@@ -51,7 +56,7 @@ Rails.application.routes.draw do
     
     scope :mypage do
       resources :dashboard, only: %i[index]
-      resources :reviews, only: %i[index show]
+      resources :events, only: %i[create destroy]
       resources :profiles, only: %i[update]
       resources :email, only: %i[update]
       resources :password, only: %i[update]

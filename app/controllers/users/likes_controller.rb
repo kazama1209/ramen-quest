@@ -2,7 +2,7 @@ class Users::LikesController < Users::ApplicationController
   before_action :only_user
 
   def create
-    @like = current_user.likes.new(review_id: params[:review_id])
+    @like = current_user.likes.build(review_id: params[:review_id])
 
     return unless @like.save
 

@@ -2,8 +2,10 @@
 <div class="row pt-3 pb-5">
   <div class="col-md-8 offset-md-2">
     <div class="card bg-white border-none">
+      <div class="card-header font-weight-bold">
+        ユーザー登録
+      </div>
       <div class="card-body p-4">
-        <h2 class="text-center font-weight-bold pb-4">ユーザー登録</h2>
         <%= simple_form_for(@user, url: signup_index_path, local: true) do |f| %>
           <div class="row">
             <div class="col-md-12">

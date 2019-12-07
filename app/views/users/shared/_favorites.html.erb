@@ -1,0 +1,41 @@
+<div class="card bg-white border-none shadow-sm mb-3">
+  <div class="card-header font-weight-bold">
+    <%= title %>（<%= favorites.count %>件）
+  </div>
+  <div class="card-body p-4">
+    <% if favorites.exists? %>
+      <% favorites.each do |favorite| %>
+        <%= link_to review_path(favorite.review) do %>
+          <div class="reviews">
+            <div class="review-image">
+              <%= image_tag favorite.review.image.url if favorite.review.image? %>
+            </div>
+            <div class="review-content">
+              <h2 class="fs-22 font-weight-bold">
+                <%= favorite.review.shop_name %>（<%= favorite.review.prefecture %>）
+              </h2>
+              <div id="review-rate-<%= favorite.review.id %>"></div>
+              <script>
+                $('#review-rate-<%= favorite.review.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= favorite.review.rate %>,
+                });
+              </script>
+              <p class="my-2"><u><%= favorite.review.title %></u></p>
+              <p class="fs-12 mb-2"><%= truncate(favorite.review.body, length: 40) %></p>
+              <p class="mb-0"><%= favorite.review.created_at.strftime("%Y年%m月%d日") %>投稿 by <%= favorite.review.user.name %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%= paginate favorites %>
+    <% else %>
+      <p class="text-center">まだレビューがありません</p>
+    <% end %>
+  </div>
+</div>

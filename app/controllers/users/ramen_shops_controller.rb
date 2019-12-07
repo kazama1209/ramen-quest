@@ -10,9 +10,9 @@ class Users::RamenShopsController < Users::ApplicationController
 
   def show
     @reviews = @ramen_shop.reviews.includes(:user).page(params[:page]).order(created_at: :desc)
-    
+
     return unless logged_in?
-    
+
     new_browsing_history = @ramen_shop.browsing_histories.build(user_id: current_user.id)
 
     if current_user.browsing_histories.exists?(ramen_shop_id: params[:id])

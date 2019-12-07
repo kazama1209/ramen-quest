@@ -1,3 +1,10 @@
+.jumbotron-fluid {
+  background: url(top-image.png);
+  background-size: cover;
+  min-height: 480px;
+  opacity: 0.7;
+}
+
 .carousel-indicators {
   & li {
     border-radius: 50%;

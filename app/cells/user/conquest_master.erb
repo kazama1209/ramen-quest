@@ -1,0 +1,24 @@
+<div class="card bg-white border-none shadow-sm mb-3">
+  <div class="card-header font-weight-bold">
+    コンクエストマスター（制覇した店の数が多い順）
+  </div>
+  <div class="card-body p-4">
+    <div class="row row-eq-height">
+      <% @users.each_with_index do |user, i| %>
+        <div class="col-md-4 col-sm-6 pb-4">
+          <%= link_to ramen_shop_path(user) do %>
+            <div class="card">
+              <div class="card-img-top">
+                <%= image_tag user.image.url if user.image? %>
+              </div>
+            	<div class="card-body">
+            		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= user.name %>さん</p>
+            		<p class="fs-12">（<%= user.completions.count %>件）</p>
+            	</div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

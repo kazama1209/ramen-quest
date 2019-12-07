@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ら～めんクエスト</title>
+    <title>ラーメンクエスト</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'users', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    
+    <%= favicon_link_tag('favicon.ico') %>
+    
+    <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <%= render partial: 'users/shared/header' %>
-        <%= render partial: 'users/shared/breadcrumb' %>
+        <%= render 'users/shared/header' %>
+        <%= render 'users/shared/breadcrumb' %>
       </header>
       <main>
+        <%= render 'users/shared/service_introduction' %>
         <div class="container">
           <% flash.each do |message_type, message| %>
             <div class="alert alert-<%= message_type %> m-2"><%= message %></div>
@@ -23,7 +26,7 @@
         </div>
       </main>
       <footer>
-        <%= render partial: 'users/shared/footer' %>
+        <%= render 'users/shared/footer' %>
       </footer>
     </div>
   </body>

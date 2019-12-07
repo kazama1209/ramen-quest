@@ -2,8 +2,10 @@
 <div class="row pt-3 pb-5">
   <div class="col-md-8 offset-md-2">
     <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        お問い合わせ
+      </div>
       <div class="card-body p-4">
-        <h2 class="text-center font-weight-bold pb-4">お問い合わせ</h2>
         <%= simple_form_for @inquiry, url: inquiries_path, method: :post, local: true do |f| %>
           <div class="row mx-0 bg-white border-bottom">
             <div class="col-md-3 col-12 pc-bg-light pt-4">
