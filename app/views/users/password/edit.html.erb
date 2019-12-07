@@ -2,8 +2,10 @@
 <div class="row pt-3 pb-5">
   <div class="col-md-8 offset-md-2">
     <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        パスワード再設定
+      </div>
       <div class="card-body p-4">
-        <h2 class="text-center font-weight-bold pb-4">パスワード再設定</h2>
         <%= simple_form_for(@user, url: reset_password_path(@token), method: :patch, local: true) do |f| %>
           <%= f.input :password, label: false, placeholder: "新しいパスワードを入力してください（英数字8文字以上）" %>
           <%= f.input :password_confirmation, label: false, placeholder: "確認のためもう一度パスワードを入力してください" %>

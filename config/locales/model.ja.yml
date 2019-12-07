@@ -19,3 +19,6 @@ ja:
         title: 'タイトル'
         body: '本文'
         image: '画像'
+      event:
+        title: '内容'
+        start_time: '日時'

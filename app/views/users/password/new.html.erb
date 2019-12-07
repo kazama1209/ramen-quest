@@ -2,8 +2,10 @@
 <div class="row pt-3">
   <div class="col-md-8 offset-md-2">
     <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        パスワード再設定
+      </div>
       <div class="card-body p-4">
-        <h2 class="text-center font-weight-bold pb-4">パスワード再設定</h2>
           <%= form_with model: @user, url: password_index_path, method: :post, local: true do |f| %>
           <div class="form-group px-5">
             <%= f.email_field :email, class: "form-control", required: true, placeholder: '登録中のメールアドレスを入力してください' %>

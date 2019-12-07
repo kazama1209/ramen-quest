@@ -2,8 +2,10 @@
 <div class="row pt-3 pb-5">
   <div class="col-md-8 order-md-2 mb-3">
     <div class="card bg-white border-none">
+      <div class="card-header font-weight-bold">
+        メールアドレスとパスワードでログイン
+      </div>
       <div class="card-body p-4">
-        <h2 class="text-center font-weight-bold pb-4">ログイン</h2>
         <%= form_with model: @user, url: login_path, local: true do |f| %>
           <div class="form-group px-5">
             <%= f.label :email %><br/>
@@ -25,8 +27,10 @@
   </div>
   <div class="col-md-4 order-md-1">
     <div class="card bg-white border-none">
+      <div class="card-header font-weight-bold">
+        SNSアカウントでログイン
+      </div>
       <div class="card-body p-4">
-        <p class="text-center font-weight-bold pb-2">SNSアカウントでログイン</p>
         <div class="text-center">
           <%= link_to "Facebookでログイン", auth_at_provider_path(provider: :facebook), class: "btn-block btn btn-fb btn-sm text-white px-5" %>
           <%= link_to "Twitterでログイン", auth_at_provider_path(provider: :twitter), class: "btn-block btn btn-tw btn-sm text-white px-5" %>

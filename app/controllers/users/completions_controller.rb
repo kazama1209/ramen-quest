@@ -6,7 +6,7 @@ class Users::CompletionsController < Users::ApplicationController
 
     return unless @completion.save
 
-    flash[:success] = '攻略済みにしました'
+    flash[:success] = '制覇しました'
     redirect_to ramen_shop_path(@completion.ramen_shop)
   end
 
@@ -15,7 +15,7 @@ class Users::CompletionsController < Users::ApplicationController
 
     return unless @completion.destroy
 
-    flash[:success] = '攻略済みを取り消しました'
+    flash[:success] = '未制覇にしました'
     redirect_to ramen_shop_path(@completion.ramen_shop)
   end
 end

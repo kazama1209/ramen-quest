@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_225336) do
+ActiveRecord::Schema.define(version: 2019_12_06_104110) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category", default: 0
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 2019_12_05_225336) do
     t.datetime "updated_at", null: false
     t.index ["ramen_shop_id"], name: "index_completions_on_ramen_shop_id"
     t.index ["user_id"], name: "index_completions_on_user_id"
+  end
+
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start_time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "information", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -144,6 +153,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_225336) do
   add_foreign_key "browsing_histories", "users"
   add_foreign_key "completions", "ramen_shops"
   add_foreign_key "completions", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "likes", "reviews"
   add_foreign_key "likes", "users"
   add_foreign_key "reviews", "ramen_shops"

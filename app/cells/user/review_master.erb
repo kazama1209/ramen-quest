@@ -1,19 +1,19 @@
 <div class="card bg-white border-none shadow-sm mb-3">
   <div class="card-header font-weight-bold">
-    人気のラーメン店
+    レビューマスター（レビューの数が多い順）
   </div>
   <div class="card-body p-4">
     <div class="row row-eq-height">
-      <% @ramen_shops.each_with_index do |ramen_shop, i| %>
+      <% @users.each_with_index do |user, i| %>
         <div class="col-md-4 col-sm-6 pb-4">
-          <%= link_to ramen_shop_path(ramen_shop) do %>
+          <%= link_to ramen_shop_path(user) do %>
             <div class="card">
               <div class="card-img-top">
-                <%= image_tag ramen_shop.image.url if ramen_shop.image? %>
+                <%= image_tag user.image.url if user.image? %>
               </div>
             	<div class="card-body">
-            		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= ramen_shop.name %>（<%= ramen_shop.prefecture %>）</p>
-            		<p class="fs-12">（<%= ramen_shop.reviews.count %>件のレビュー）</p>
+            		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= user.name %>さん</p>
+            		<p class="fs-12">（<%= user.reviews.count %>件のレビュー）</p>
             	</div>
             </div>
           <% end %>

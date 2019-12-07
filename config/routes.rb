@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     namespace :mypage do
       get :reviews
       get :bookmarks
+      get :events
       get :profile
       get :email
       get :password
@@ -55,6 +56,7 @@ Rails.application.routes.draw do
     
     scope :mypage do
       resources :dashboard, only: %i[index]
+      resources :events, only: %i[create destroy]
       resources :profiles, only: %i[update]
       resources :email, only: %i[update]
       resources :password, only: %i[update]

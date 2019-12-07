@@ -49,8 +49,10 @@
     </div>
     <%= render 'users/shared/reviews', title: 'この店のレビュー', reviews_count: @ramen_shop.reviews.count, reviews: @reviews  %>
     <div class="card bg-white border-none shadow-sm mt-3">
+      <div class="card-header font-weight-bold">
+        レビューを書く
+      </div>
       <div class="card-body p-4">
-        <p class="text-center font-weight-bold fs-16">レビューを書く</p>
         <%= simple_form_for(Review.new, url: reviews_path(@ramen_shop.id), method: :post, local: true) do |f| %>
           <%= render 'users/reviews/form', f: f %>
         <% end %>

@@ -1,9 +1,11 @@
-<% breadcrumb :show_ramen_shop, @ramen_shop %>
+<% breadcrumb :ramen_shop, @ramen_shop %>
 <div class="row pt-3 pb-5">
   <div class="col-md-8">
     <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        店舗情報を編集する
+      </div>
       <div class="card-body p-4">
-        <h2 class="text-center font-weight-bold pb-4">店舗情報を編集する</h2>
         <%= simple_form_for(@ramen_shop, url: ramen_shop_path(@ramen_shop), local: true) do |f| %>
           <%= render 'form', f: f %>
         <% end %>
