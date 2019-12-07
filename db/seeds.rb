@@ -7,7 +7,7 @@ User.create!(
   name: '管理人',
   profile: 'よろしくお願いします。',
   gender: 'female',
-  image: File.open("#{Rails.root}/db/fixtures/images/5.png"),
+  image: File.open("#{Rails.root}/db/fixtures/images/0.png"),
 )
 
 User.create!(
