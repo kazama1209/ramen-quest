@@ -26,15 +26,35 @@
     </div>
   </div>
   <div class="col-md-4 order-md-1">
+    <div class="card bg-white border-none mb-3">
+      <div class="card-header font-weight-bold">
+        テストユーザーとしてログイン
+      </div>
+      <div class="card-body p-4">
+        <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <%= f.hidden_field :email, value: "test@gmail.com" %>
+          <%= f.hidden_field :password, value: "12341234" %>
+          <%= button_tag type: 'submit', class:"btn-block btn btn-secondary btn-sm text-white px-5" do %>
+            <i class="fas fa-power-off"></i> お試しログイン
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     <div class="card bg-white border-none">
       <div class="card-header font-weight-bold">
         SNSアカウントでログイン
       </div>
       <div class="card-body p-4">
         <div class="text-center">
-          <%= link_to "Facebookでログイン", auth_at_provider_path(provider: :facebook), class: "btn-block btn btn-fb btn-sm text-white px-5" %>
-          <%= link_to "Twitterでログイン", auth_at_provider_path(provider: :twitter), class: "btn-block btn btn-tw btn-sm text-white px-5" %>
-          <%= link_to "LINEでログイン", auth_at_provider_path(provider: :line), class: "btn-block btn btn-li btn-sm text-white px-5" %>
+          <%= link_to auth_at_provider_path(provider: :facebook), class: "btn-block btn btn-fb btn-sm text-white px-5" do %>
+            <i class="fab fa-facebook-square"></i> Facebookでログイン
+          <% end %>
+          <%= link_to auth_at_provider_path(provider: :twitter), class: "btn-block btn btn-tw btn-sm text-white px-5" do %>
+            <i class="fab fa-twitter-square"></i> Twitterでログイン
+          <% end %>
+          <%= link_to auth_at_provider_path(provider: :line), class: "btn-block btn btn-li btn-sm text-white px-5" do %>
+            <i class="fab fa-line"></i> LINEでログイン
+          <% end %>
         </div>
         <small>
           <p class="pt-3">ログインに必要なアカウント情報は次の目的以外では使用されません。また、法令に定められた場合を除き第三者への提供はいたしません。</p>

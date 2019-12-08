@@ -1,12 +1,40 @@
 <aside>
   <div class="card bg-white border-none shadow-sm mb-3">
+    <div class="card-header font-weight-bold">
+      スポンサードリンク
+    </div>
+    <div class="card-body p-3 text-center">
+      <%= image_tag 'ad.png' %>
+    </div>
+  </div>
+  
+  <div class="card bg-white border-none shadow-sm mb-3">
+    <div class="card-header font-weight-bold">
+      店舗情報の追加
+    </div>
     <div class="card-body p-3">
       <%= link_to new_ramen_shop_path, class: "btn-block btn btn-success" do %>
-        <i class="fas fa-edit"></i> 店舗情報を追加する
+        <i class="fas fa-edit"></i> 追加する
       <% end %>
       <small>
         <p class="pt-3">まだデータベースに情報が無い場合はこちらから追加をお願いします。</p>
       </small>
+    </div>
+  </div>
+  <div class="card bg-white border-none shadow-sm mb-3">
+    <div class="card-header font-weight-bold">
+      ラーメンクエスト公式SNS
+    </div>
+    <div class="card-body p-3">
+      <%= link_to "#", target: "_blank" do %>
+        <i class="fab fa-twitter-square fa-2x"></i>
+      <% end %>
+      <%= link_to "#", target: "_blank" do %>
+        <i class="fab fa-facebook-square fa-2x mx-2"></i>
+      <% end %>
+      <%= link_to "#", target: "_blank" do %>
+        <i class="fab fa-line fa-2x"></i>
+      <% end %>
     </div>
   </div>
   <% if logged_in? %>

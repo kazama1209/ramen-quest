@@ -7,6 +7,7 @@ FactoryBot.define do
     name { 'admin' }
     profile { '管理者です。' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
+    role { 200 }
     
     after(:create) do |admin|
       admin.activate!
@@ -21,6 +22,7 @@ FactoryBot.define do
     password_confirmation { '12341234' } 
     profile { 'よろしくお願いします。' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
+    role { 0 }
     
     after(:create) do |user|
       user.activate!
