@@ -25,4 +25,16 @@ RSpec.describe User, type: :model do
     # 確認用パスワードがなければ無効
     it { is_expected.to validate_presence_of(:password_confirmation) }
   end
+  
+  describe "Associations" do
+    # 以下の関連を持つ
+    it { should have_many(:authentications)}
+    it { should have_many(:reviews)}
+    it { should have_many(:likes)}
+    it { should have_many(:events)}
+    it { should have_many(:bookmarks)}
+    it { should have_many(:reviews)}
+    it { should have_many(:completions)}
+    it { should have_many(:browsing_histories)}
+  end
 end

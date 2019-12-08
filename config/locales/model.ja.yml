@@ -22,3 +22,9 @@ ja:
       event:
         title: '内容'
         start_time: '日時'
+      article:
+        category: 'カテゴリー'
+        description: 'メタディスクリプション'
+        title: 'タイトル'
+        body: '本文'
+        image: '画像'

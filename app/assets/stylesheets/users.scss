@@ -50,3 +50,39 @@ footer {
   padding-top: 20px;
   margin: 0;
 }
+
+#page-top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: -50px;
+  background: $dark;
+  opacity: 0.6;
+  border-radius: 50%;
+
+  a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    
+    &:before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f077';
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -15px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}

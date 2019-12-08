@@ -24,8 +24,21 @@
         <p class="text-center fs-14">熱いのはラーメンだけではありません。ユーザーはもちろん、運営陣もラーメンに対する熱い情熱を持っています。より良いサービスの提供を目指して…。</p>
       </div>
     </div>
-    <div class="col-md-12 mb-4">
-      <div class="bg-white rounded p-4"><p class="text-primary">※ラーメンクエストは、レビューやブックマーク、ランキングなどの機能を活用し、日々のラーメン巡りを記録するためのWEBサービスです。コツコツと積み重ねた結果を可視化し、ユーザー間で情報共有する事により、ラーメン好きにありがちな「承認欲求（ラーメン通である事に対する誇り）」の実現を目指します。</p>
+    <div class="col-md-12 mb-4 bg-white rounded p-4">
+      <p class="text-primary">
+        ※ラーメンクエストは、レビューやブックマーク、ランキングなどの機能を活用し、日々のラーメン巡りを記録するためのWEBサービスです。コツコツと積み重ねた結果を可視化し、ユーザー間で情報共有する事により、ラーメン好きにありがちな「承認欲求（ラーメン通である事に対する誇り）」の実現を目指します。
+      </p>
+      <% unless logged_in? %>
+        <div class="text-center">
+          <%= form_with model: User.new, url: login_path, local: true do |f| %>
+            <%= f.hidden_field :email, value: "test@gmail.com" %>
+            <%= f.hidden_field :password, value: "12341234" %>
+            <%= button_tag type: 'submit', class:"btn btn-secondary text-white px-5" do %>
+              <i class="fas fa-power-off"></i> お試しログイン
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

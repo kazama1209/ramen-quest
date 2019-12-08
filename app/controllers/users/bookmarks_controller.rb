@@ -6,7 +6,6 @@ class Users::BookmarksController < Users::ApplicationController
 
     return unless @bookmark.save
 
-    flash[:success] = 'ブックマークを登録しました'
     redirect_to ramen_shop_path(@bookmark.ramen_shop)
   end
 
@@ -15,7 +14,6 @@ class Users::BookmarksController < Users::ApplicationController
 
     return unless @bookmark.destroy
 
-    flash[:success] = 'ブックマークを削除しました'
     redirect_to ramen_shop_path(@bookmark.ramen_shop)
   end
 end

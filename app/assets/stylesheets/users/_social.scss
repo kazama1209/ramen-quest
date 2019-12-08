@@ -54,16 +54,16 @@
 .social-btn-sp {
   margin: 30px auto;
   text-align: center;
+}
+
+.fa-twitter-square {
+  color: $twitter;
+}
   
-  .fa-twitter-square {
-    color: $twitter;
-  }
-  
-  .fa-facebook-square {
-    color: $facebook;
-  }
-  
-  .fa-line {
-    color: $line;
-  }
+.fa-facebook-square {
+  color: $facebook;
+}
+
+.fa-line {
+  color: $line;
 }

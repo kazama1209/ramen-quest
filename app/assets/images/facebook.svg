@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="22px" viewBox="0 0 12 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>FCFAAACE-1716-4CFD-8F78-3B4984E3FC5C</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M7.79600887,22 L7.79600887,11.9787197 L11.3481153,11.9787197 L11.8802661,8.05624892 L7.79600887,8.05624892 L7.79600887,5.55801461 C7.79600887,4.4250532 8.12674058,3.65295911 9.83494457,3.65295911 L12,3.65295911 L12,0.154115143 C11.6232373,0.106539368 10.3309091,0 8.82731707,0 C5.68762749,0 3.53880266,1.82205096 3.53880266,5.16956347 L3.53880266,8.05624892 L0,8.05624892 L0,11.9787197 L3.53880266,11.9787197 L3.53880266,22 L7.79600887,22 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A/SNSアイコン/フェイスブック" transform="translate(-19.000000, -14.000000)">
+            <g id="A/色/白" transform="translate(19.000000, 14.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="A/色/グレー（#373A41）" mask="url(#mask-2)" fill="#373A41">
+                    <g transform="translate(-13.600000, -8.344828)" id="Rectangle">
+                        <rect x="0" y="0" width="40" height="38"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

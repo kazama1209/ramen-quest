@@ -37,7 +37,7 @@ class Users::RamenShopsController < Users::ApplicationController
 
     return render :new unless @ramen_shop.save
 
-    flash[:success] = '登録に成功しました'
+    flash[:success] = '店舗情報を追加しました'
     redirect_to ramen_shops_path
   end
 

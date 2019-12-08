@@ -8,6 +8,33 @@ RSpec.describe Users::MypageController, type: :controller do
     login_user(user)
   end
   
+  describe 'GET #reviews' do
+    
+    # 正常なレスポンスを返す
+    it 'returns http success' do
+      get :reviews
+      expect(response).to have_http_status(:success)
+    end
+  end
+  
+  describe 'GET #bookmarks' do
+    
+    # 正常なレスポンスを返す
+    it 'returns http success' do
+      get :reviews
+      expect(response).to have_http_status(:success)
+    end
+  end
+  
+  describe 'GET #events' do
+    
+    # 正常なレスポンスを返す
+    it 'returns http success' do
+      get :reviews
+      expect(response).to have_http_status(:success)
+    end
+  end
+  
   describe 'GET #profile' do
     
     # 正常なレスポンスを返す
