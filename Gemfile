@@ -78,7 +78,6 @@ gem 'cells-erb'
 gem 'cells-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
-gem 'rack-attack'
 gem 'simple_calendar'
 gem 'simple_form'
 
@@ -111,6 +110,11 @@ gem 'ransack'
 
 # SEO
 gem 'gretel'
+gem 'meta-tags'
+gem 'sitemap_generator'
+
+# Security
+gem 'rack-attack'
 
 # Map
 gem 'geocoder'
