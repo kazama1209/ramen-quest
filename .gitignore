@@ -34,3 +34,7 @@ public/uploads
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+
+# Ignore sitemap
+public/sitemap.xml
+public/sitemap.xml.gz

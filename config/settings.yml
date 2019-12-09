@@ -1,5 +1,18 @@
 service:
   default_host: 'localhost:3000'
+  
+default_meta_tags:
+  title: &title 'ラーメンクエスト'
+  charset: 'utf-8'
+  description: &description 'ラーメンクエストは、レビューやブックマーク、ランキングなどの機能を活用し、日々のラーメン巡りを記録するためのWEBサービスです。'
+  keywords: 'ラーメン,口コミ,レビュー,ランキング'
+  reverse: true
+  og:
+    title: *title
+    description: *description
+    type:	website
+    locale: ja_JP
+
 
 mail:
   activation_needed: 'ユーザー登録のご案内'
