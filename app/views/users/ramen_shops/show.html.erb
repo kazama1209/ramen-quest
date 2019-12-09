@@ -43,6 +43,7 @@
             </tr>
           </table>
         </div>
+        <div id="map" class="mb-3" style='width: 100%; height: 500px;'></div>
         <%= render 'users/bookmarks/button', ramen_shop: @ramen_shop %>
         <%= render 'users/completions/button', ramen_shop: @ramen_shop %>
       </div>
@@ -63,3 +64,18 @@
     <%= render 'users/shared/sidemenu' %>
   </div>
 </div>
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": <%= @ramen_shop.latitude %>,
+        "lng": <%= @ramen_shop.longitude %>,
+	  "infowindow": '<p><%= @ramen_shop.name %></p><p><%= @ramen_shop.address %></p><p><%= link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:#{@ramen_shop.latitude},#{@ramen_shop.longitude}&iwloc=J",target: "_blank" %></p>'
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(17);
+  });
+</script>

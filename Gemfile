@@ -111,3 +111,7 @@ gem 'ransack'
 
 # SEO
 gem 'gretel'
+
+# Map
+gem 'geocoder'
+gem 'gmaps4rails'
