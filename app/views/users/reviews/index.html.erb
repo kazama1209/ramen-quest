@@ -6,11 +6,20 @@
         フリーワードから探す
       </div>
       <div class="card-body p-4">
-        <div class="form-inline pb-3">
+        <div class="d-md-block d-none">
+          <div class="form-inline">
+            <%= search_form_for @q do |f| %>
+              <%= f.search_field :title_or_shop_name_or_prefecture_or_address_or_body_cont, class: "form-control fa", placeholder: "\uf002 地名や店名などを入力..." %>
+              <%= f.submit "検索", class: "btn btn-primary" %>
+              <%= link_to "リセット", reviews_path, class: "btn btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-md-none d-block">
           <%= search_form_for @q do |f| %>
-            <%= f.search_field :title_or_shop_name_or_prefecture_or_address_or_body_cont, class: "form-control fa", placeholder: "\uf002 地名や店名などを入力..." %>
-            <%= f.submit "検索", class: "btn btn-primary" %>
-            <%= link_to "リセット", reviews_path, class: "btn btn-danger" %>
+            <%= f.search_field :title_or_shop_name_or_prefecture_or_address_or_body_cont, class: "form-control fa mb-2", placeholder: "\uf002 地名や店名などを入力..." %>
+            <%= f.submit "検索", class: "btn btn-primary btn-block" %>
+            <%= link_to "リセット", reviews_path, class: "btn btn-danger btn-block" %>
           <% end %>
         </div>
       </div>
