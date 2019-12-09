@@ -27,6 +27,16 @@ crumb :password_reset do
   parent :login
 end
 
+crumb :questions do
+  link '良くある質問', questions_path
+  parent :root
+end
+
+crumb :corporation do
+  link '運営会社', corporation_path
+  parent :root
+end
+
 crumb :privacy do
   link 'プライバシーポリシー', privacy_path
   parent :root
