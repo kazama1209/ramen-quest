@@ -57,6 +57,6 @@ class Users::RamenShopsController < Users::ApplicationController
   end
 
   def shop_params
-    params.require(:ramen_shop).permit(:name, :prefecture, :address, :phone, :image)
+    params.require(:ramen_shop).permit(:name, :prefecture, :address, :phone, :image, :latitude, :longitude)
   end
 end

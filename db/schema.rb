@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_104110) do
+ActiveRecord::Schema.define(version: 2019_12_09_004151) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category", default: 0
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 2019_12_06_104110) do
     t.string "name"
     t.integer "prefecture", default: 0
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.string "phone"
     t.string "image"
     t.datetime "created_at", null: false

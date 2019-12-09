@@ -42,6 +42,16 @@ User.create!(
   image: File.open("#{Rails.root}/db/fixtures/images/3.png"),
 )
 
+User.create!(
+  id: 5,
+  email: 'test@gmail.com',
+  password: '12341234',
+  password_confirmation: '12341234',
+  name: 'テストユーザー',
+  profile: 'テストユーザーです。よろしくお願いします。',
+  role: :user,
+)
+
 users = User.all
 users.each do |user|
   user.activate!
