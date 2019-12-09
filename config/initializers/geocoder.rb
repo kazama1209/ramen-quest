@@ -7,7 +7,7 @@ Geocoder.configure(
   # ip_lookup: :maxmind,
 
   # to use an API key:
-  api_key: "AIzaSyA5wnoZU4ZvnIszmKLdzAK1wn-9I-8QidU",
+  api_key: ENV['GMAP_API_KEY'],
 
   # geocoding service request timeout, in seconds (default 3):
   timeout: 5,
