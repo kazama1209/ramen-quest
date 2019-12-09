@@ -78,6 +78,7 @@ gem 'cells-erb'
 gem 'cells-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'redcarpet'
 gem 'simple_calendar'
 gem 'simple_form'
 

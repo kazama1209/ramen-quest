@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'users/home#index'
   
+  get :questions, to: 'users/about#questions'
+  get :corporation, to: 'users/about#corporation'
   get :privacy, to: 'users/about#privacy'
   get :terms, to: 'users/about#terms'
   
