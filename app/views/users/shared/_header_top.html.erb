@@ -1,45 +1,114 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-  <div class="container">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      ラーメンクエスト
-    <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <% if logged_in? %>
-          <% if current_user.admin? %>
+<div class="d-md-block d-none">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        ラーメンクエスト
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon collapse-close"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <li class="nav-item">
+                <%= link_to admins_dashboard_index_path, class: "nav-link text-white" do %>
+                  <i class="fas fa-tools"></i> 管理画面
+                <% end %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
+                  <i class="fas fa-user"></i> マイページ
+                <% end %>
+              </li>
+            <% end %>
             <li class="nav-item">
-              <%= link_to admins_dashboard_index_path, class: "nav-link text-white" do %>
-                <i class="fas fa-hammer"></i> 管理画面
+              <%= link_to logout_path, method: :delete, class: "nav-link text-white" do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト
               <% end %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
-                <i class="fas fa-user"></i> マイページ
+              <%= link_to new_signup_path, class: "nav-link text-white" do %>
+                <i class="fas fa-user-edit"></i> ユーザー登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to login_path, class: "nav-link text-white" do %>
+                <i class="fas fa-power-off"></i> ログイン
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="d-md-none d-block">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        ラーメンクエスト
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon collapse-close"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <li class="nav-item">
+                <%= link_to admins_dashboard_index_path, class: "nav-link text-white" do %>
+                  <i class="fas fa-tools"></i> 管理画面
+                <% end %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to dashboard_index_path, class: "nav-link text-white" do %>
+                  <i class="fas fa-user"></i> マイページ
+                <% end %>
+              </li>
+            <% end %>
+            <li class="nav-item">
+              <%= link_to logout_path, method: :delete, class: "nav-link text-white" do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to new_signup_path, class: "nav-link text-white" do %>
+                <i class="fas fa-user-edit"></i> ユーザー登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to login_path, class: "nav-link text-white" do %>
+                <i class="fas fa-power-off"></i> ログイン
               <% end %>
             </li>
           <% end %>
           <li class="nav-item">
-            <%= link_to logout_path, method: :delete, class: "nav-link text-white" do %>
-              <i class="fas fa-sign-out-alt"></i> ログアウト
-            <% end %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to new_signup_path, class: "nav-link text-white" do %>
-              <i class="fas fa-user-edit"></i> ユーザー登録
+            <%= link_to reviews_path, class: "nav-link text-white" do %>
+              <i class="fas fa-star"></i> みんなのレビュー
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to login_path, class: "nav-link text-white" do %>
-              <i class="fas fa-power-off"></i> ログイン
+            <%= link_to ramen_shops_path, class: "nav-link text-white" do %>
+              <i class="fas fa-search"></i> データベース
             <% end %>
           </li>
-        <% end %>
-      </ul>
+          <li class="nav-item">
+            <%= link_to ranking_index_path, class: "nav-link text-white" do %>
+              <i class="fas fa-crown"></i> ランキング
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to articles_path, class: "nav-link text-white" do %>
+              <i class="fas fa-rss"></i> ニュース
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

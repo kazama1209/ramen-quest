@@ -12,9 +12,10 @@
 //
 //= require rails-ujs
 //= require jquery3
+//= require scroll
 //= require popper
 //= require bootstrap-sprockets
 //= require activestorage
+//= require jquery.raty
 //= require underscore
 //= require gmaps/google
-//= require_tree .

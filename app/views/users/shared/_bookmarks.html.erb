@@ -15,13 +15,11 @@
               	<div class="card-body">
               		<p class="card-title font-weight-bold"><%= bookmark.ramen_shop.name %>（<%= bookmark.ramen_shop.prefecture %>）</p>
               		<p class="fs-12">（<%= bookmark.ramen_shop.reviews.count %>件のレビュー）</p>
-              		
               		<% if bookmark.ramen_shop.completions.exists? %>
               		  <span class="badge badge-success">制覇</span>
               		<% else %>
               		  <span class="badge badge-danger">未制覇</span>
               		<% end %>
-              		
               	</div>
               </div>
             <% end %>

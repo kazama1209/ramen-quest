@@ -8,7 +8,7 @@
             <%= link_to 'よくある質問', questions_path %>
           </p>
           <p class="fs-14">
-            <%= link_to 'お知らせ', informations_path %>
+            <%= link_to 'お問い合わせ', questions_path %>
           </p>
         </div>
         <div class="col-md-3">
@@ -40,14 +40,49 @@
               <%= f.submit '送信', class: "btn btn-danger w-100" %>
             <% end %>
           </div>
-          
           <div class="rounded bg-white text-center p-3">
             <p class="font-weight-bold fs-16">返信・サポートが必要な場合はこちら</p>
             <%= link_to 'お問い合わせ', new_inquiry_path, class: "btn btn-secondary w-100" %>
           </div>
-          
         </div>
-        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-md-none d-block">
+  <div class="bg-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <p class="font-weight-bold">ご利用ガイド</p>
+          <p class="fs-14">
+            <%= link_to 'よくある質問', questions_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to 'お問い合わせ', questions_path %>
+          </p>
+        </div>
+        <div class="col-6">
+          <p class="font-weight-bold">ニュース</p>
+          <p class="fs-14">
+            <%= link_to '割引キャンペーン', articles_path(category: 1) %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '新店オープン', articles_path(category: 2) %>
+          </p>
+        </div>
+        <div class="col-6">
+          <p class="font-weight-bold">サイト情報</p>
+          <p class="fs-14">
+            <%= link_to '運営会社', corporation_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '利用規約', terms_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to 'プライバシーポリシー', privacy_path %>
+          </p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,30 +1,5 @@
 <% breadcrumb :login %>
 <div class="row pt-3 pb-5">
-  <div class="col-md-8 order-md-2 mb-3">
-    <div class="card bg-white border-none">
-      <div class="card-header font-weight-bold">
-        メールアドレスとパスワードでログイン
-      </div>
-      <div class="card-body p-4">
-        <%= form_with model: @user, url: login_path, local: true do |f| %>
-          <div class="form-group px-5">
-            <%= f.label :email %><br/>
-            <%= f.email_field :email, class: "form-control", required: true %>
-          </div>
-          <div class="form-group px-5">
-            <%= f.label :password %><br/>
-            <%= f.password_field :password, class: "form-control", required: true %>
-          </div>
-          <div class="text-center">
-            <%= submit_tag "ログインする", class: "btn btn-danger btn-sm px-5" %>
-          </div>
-          <div class="text-center py-3">
-            <%= link_to "パスワードを忘れた方はこちら", new_password_path %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
   <div class="col-md-4 order-md-1">
     <div class="card bg-white border-none mb-3">
       <div class="card-header font-weight-bold">
@@ -40,7 +15,7 @@
         <% end %>
       </div>
     </div>
-    <div class="card bg-white border-none">
+    <div class="card bg-white border-none mb-3">
       <div class="card-header font-weight-bold">
         SNSアカウントでログイン
       </div>
@@ -63,6 +38,31 @@
             <li>パスワード再発行時の本人確認</li>
           </ul>
         </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 order-md-2">
+    <div class="card bg-white border-none">
+      <div class="card-header font-weight-bold">
+        メールアドレスとパスワードでログイン
+      </div>
+      <div class="card-body p-4">
+        <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <div class="form-group px-5">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, class: "form-control", required: true %>
+          </div>
+          <div class="form-group px-5">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, class: "form-control", required: true %>
+          </div>
+          <div class="text-center">
+            <%= submit_tag "ログインする", class: "btn btn-danger btn-sm px-5" %>
+          </div>
+          <div class="text-center py-3">
+            <%= link_to "パスワードを忘れた方はこちら", new_password_path %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
