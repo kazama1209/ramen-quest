@@ -25,9 +25,7 @@
 
 - Ruby 2.6.3
 - Rails 5.2.4
-- Bootstrap4
 - Cloud9
-- Circleci
 
 # 各種機能＆導入技術
 
@@ -35,6 +33,7 @@
 - データベース（MySQL）
 - テスト（Rspec、Capybara、factory_bot）
 - 継続的インテグレーション（Circleci）
+- CSSフレームワーク（Bootstrap4）
 - コードチェック（rubocop、rails_best_practices、bullet）
 - セキュリティチェック（brakeman、rack-attack）
 - ユーザー登録＆ログイン（sorcery）※ソーシャルログイン含む
