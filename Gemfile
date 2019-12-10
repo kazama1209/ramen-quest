@@ -122,3 +122,7 @@ gem 'rack-attack'
 # Map
 gem 'geocoder'
 gem 'gmaps4rails'
+
+# Notification
+gem 'exception_notification'
+gem 'slack-notifier'

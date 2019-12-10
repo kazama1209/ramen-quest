@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     Rails.logger.error(error)
     Rails.logger.error(error.backtrace.join("\n"))
 
+    ExceptionNotifier.notify_exception(error, env: request.env, data: { message: error })
     render template: '/users/errors/500', status: :internal_server_error, layout: 'users'
   end
 end
