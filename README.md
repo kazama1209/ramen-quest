@@ -34,6 +34,7 @@
 - プラットフォーム（heroku）
 - データベース（MySQL）
 - テスト（Rspec、Capybara、factory_bot）
+- 継続的インテグレーション（Circleci）
 - コードチェック（rubocop、rails_best_practices、bullet）
 - セキュリティチェック（brakeman、rack-attack）
 - ユーザー登録＆ログイン（sorcery）※ソーシャルログイン含む
