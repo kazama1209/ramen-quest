@@ -38,6 +38,10 @@
 - セキュリティチェック（brakeman、rack-attack）
 - ユーザー登録＆ログイン（sorcery）※ソーシャルログイン含む
 - 画像アップロード（carrierwave、mini_magick、 AWS S3、 fog）
+- レビュー（jquery.raty）
+- カレンダー（simple_calendar）
+- いいね！
+- ブックマーク
 - エディタ（medium-editor）
 - マークダウン（redcarpet）
 - パーシャル（cells）
