@@ -65,6 +65,7 @@ group :test do
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'launchy', '~> 2.4.3'
   gem 'rspec-rails', '~> 3.6'
+  gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
   gem 'webdrivers', '~> 3.0'
 end
