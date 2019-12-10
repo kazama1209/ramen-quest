@@ -16,4 +16,9 @@ class UserMailer < ApplicationMailer
     @url = edit_password_url(@user.reset_password_token)
     mail(to: user.email, subject: Settings.mail.reset_password)
   end
+
+  def inquiry(inquiry)
+    @inquiry = inquiry
+    mail(to: inquiry.email, subject: Settings.mail.inquiry)
+  end
 end

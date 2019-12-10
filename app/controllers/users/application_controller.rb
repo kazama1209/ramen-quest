@@ -1,6 +1,11 @@
 class Users::ApplicationController < ::ApplicationController
   layout 'users'
 
+  def notice_slack(message)
+    notifier = Slack::Notifier.new(Settings.slack.webhook_url)
+    notifier.ping(message)
+  end
+
   private
 
   def only_user

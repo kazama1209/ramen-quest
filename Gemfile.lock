@@ -150,6 +150,9 @@ GEM
       temple
     erubi (1.9.0)
     erubis (2.7.0)
+    exception_notification (4.4.0)
+      actionmailer (>= 4.0, < 7)
+      activesupport (>= 4.0, < 7)
     excon (0.68.0)
     execjs (2.7.0)
     factory_bot (4.10.0)
@@ -401,6 +404,7 @@ GEM
       activemodel (>= 5.0)
     sitemap_generator (6.0.2)
       builder (~> 3.0)
+    slack-notifier (2.3.2)
     sorcery (0.14.0)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -466,6 +470,7 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   email_validator
+  exception_notification
   factory_bot_rails (~> 4.10.0)
   fog-aws
   font-awesome-sass
@@ -503,6 +508,7 @@ DEPENDENCIES
   simple_calendar
   simple_form
   sitemap_generator
+  slack-notifier
   sorcery
   spring
   spring-commands-rspec
