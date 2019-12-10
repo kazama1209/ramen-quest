@@ -6,15 +6,11 @@ RSpec.feature "Inquiries", type: :feature do
     
     # お問い合わせフォーム
     it 'Inquiry Form' do
-      visit root_path
-      expect(page).to have_http_status :ok
-      expect(current_path).to eq root_path
-      
-      click_on 'お問い合わせ'
-      
+      visit new_inquiry_path
       expect(page).to have_http_status :ok
       expect(current_path).to eq new_inquiry_path
-      expect(page).to have_text 'お問い合わせ'
+      
+      expect(page).to have_text 'お問い合わせ内容'
     end
   end
   

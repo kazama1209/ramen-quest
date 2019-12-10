@@ -1,0 +1,73 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2.1
+jobs:
+  build:
+    parameters:
+      assets_precompile:
+        description: "Whether or not do assets:precompile"
+        type: boolean
+        default: false
+    docker:
+      - image: circleci/ruby:2.6.3-node
+        environment:
+          BUNDLE_PATH: vendor/bundle
+          BUNDLER_VERSION: 2.0.1
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_DATABASE: base_project_test
+    steps:
+      - run: gem install bundler -v $BUNDLER_VERSION
+      - checkout
+      - restore_cache:
+          keys:
+            - bundle-v2-{{ checksum "Gemfile.lock" }}
+            - yarn-v1-{{ checksum "yarn.lock" }}
+      - run: bin/bundle check || bin/bundle install --deployment
+      - run:
+          name: install yarn dependencies
+          command: bundle exec yarn install
+      - save_cache:
+          key: bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          command: bin/rake db:create db:migrate
+          environment:
+            RAILS_ENV: test
+
+      - run: bin/bundle exec rubocop
+      - run: bin/bundle exec rails_best_practices
+      - run: bundle exec brakeman -5 -A -w 1 -e -z
+      - run:
+          name: run tests
+          command: |
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --format progress
+
+      - store_artifacts:
+          path: coverage
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+workflows:
+  version: 2
+  on_push:
+    jobs:
+      - build:
+          name: build_normal
+          assets_precompile: false
