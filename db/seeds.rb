@@ -44,7 +44,7 @@ User.create!(
 
 User.create!(
   id: 5,
-  email: 'test@gmail.com',
+  email: 'test@example.com',
   password: '12341234',
   password_confirmation: '12341234',
   name: 'テストユーザー',

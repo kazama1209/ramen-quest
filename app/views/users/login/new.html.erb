@@ -7,7 +7,7 @@
       </div>
       <div class="card-body p-4">
         <%= form_with model: @user, url: login_path, local: true do |f| %>
-          <%= f.hidden_field :email, value: "test@gmail.com" %>
+          <%= f.hidden_field :email, value: "test@example.com" %>
           <%= f.hidden_field :password, value: "12341234" %>
           <%= button_tag type: 'submit', class:"btn-block btn btn-secondary btn-sm text-white px-5" do %>
             <i class="fas fa-power-off"></i> お試しログイン
