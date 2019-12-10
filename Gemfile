@@ -111,6 +111,7 @@ gem 'kaminari-i18n'
 gem 'ransack'
 
 # SEO
+gem 'google-analytics-rails'
 gem 'gretel'
 gem 'meta-tags'
 gem 'sitemap_generator'
