@@ -38,9 +38,13 @@
 - セキュリティチェック（brakeman、rack-attack）
 - ユーザー登録＆ログイン（sorcery）※ソーシャルログイン含む
 - 画像アップロード（carrierwave, mini_magick, AWS S3, fog）
+- エディタ（medium-editor）
+- マークダウン（redcarpet）
+- パーシャル（cells）
 - ページネーション（kaminari）
 - メールアクティベーション、パスワードリセット（ActionMailer）
 - 検索（ransack）
 - マップ（geocoder、gmaps4rails）
 - パンくずリスト（gretel）
 - SEO対策（meta-tags、sitemap_generator）
+- 管理者ページ（AdminLTE）
