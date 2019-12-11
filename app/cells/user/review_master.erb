@@ -7,7 +7,7 @@
       <% @users.each_with_index do |user, i| %>
         <div class="col-md-4 col-sm-6 pb-4">
           <%= link_to ramen_shop_path(user) do %>
-            <div class="card">
+            <div class="card h-100">
               <div class="card-img-top">
                 <%= image_tag user.image.url if user.image? %>
               </div>

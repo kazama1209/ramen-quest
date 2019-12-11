@@ -7,7 +7,7 @@
       <% @reviews.each_with_index do |review, i| %>
         <div class="col-md-4 col-sm-6 pb-4">
           <%= link_to review_path(review) do %>
-            <div class="card">
+            <div class="card h-100">
               <div class="card-img-top">
                 <%= image_tag review.image.url if review.image? %>
               </div>
