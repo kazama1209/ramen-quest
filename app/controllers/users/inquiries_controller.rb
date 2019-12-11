@@ -8,6 +8,7 @@ class Users::InquiriesController < Users::ApplicationController
 
     return render :new unless @inquiry.save
 
+    flash[:success] = 'お問い合わせを受け付けました'
     redirect_to complete_inquiries_path
     @inquiry.give_notification
 
