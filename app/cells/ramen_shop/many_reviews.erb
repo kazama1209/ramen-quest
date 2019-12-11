@@ -3,20 +3,26 @@
     人気のラーメン店
   </div>
   <div class="card-body p-4">
-    <div class="row row-eq-height">
-      <% @ramen_shops.each_with_index do |ramen_shop, i| %>
-        <div class="col-md-4 col-sm-6 pb-4">
-          <%= link_to ramen_shop_path(ramen_shop) do %>
-            <div class="card">
-              <div class="card-img-top">
-                <%= image_tag ramen_shop.image.url if ramen_shop.image? %>
+    <div class="row">
+      <% if @ramen_shops.any? %>
+        <% @ramen_shops.each_with_index do |ramen_shop, i| %>
+          <div class="col-md-4 col-sm-6 pb-4">
+            <%= link_to ramen_shop_path(ramen_shop) do %>
+              <div class="card h-100">
+                <div class="card-img-top">
+                  <%= image_tag ramen_shop.image.url if ramen_shop.image? %>
+                </div>
+              	<div class="card-body">
+              		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= ramen_shop.name %>（<%= ramen_shop.prefecture %>）</p>
+              		<p class="fs-12">（<%= ramen_shop.reviews.count %>件のレビュー）</p>
+              	</div>
               </div>
-            	<div class="card-body">
-            		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= ramen_shop.name %>（<%= ramen_shop.prefecture %>）</p>
-            		<p class="fs-12">（<%= ramen_shop.reviews.count %>件のレビュー）</p>
-            	</div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="col-md-12">
+          <p class="text-center">まだ登録されていません</p>
         </div>
       <% end %>
     </div>

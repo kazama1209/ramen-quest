@@ -2,13 +2,18 @@
   <div class="card-header font-weight-bold">
     お知らせ
   </div>
-  <div class="card-body p-0">
-    <% @informations.each do |information| %>
-      <div class="list-group list-group-flush">
-        <%= link_to informations_path do %>
-          <div class="list-group-item"><%= information.created_at.strftime("%Y年%m月%d日") %> <%= information.title %></div>
-        <% end %>
-      </div>
+  <div class="card-body">
+    <% if @informations.any? %>
+      <% @informations.each do |information| %>
+        <div class="list-group list-group-flush">
+          <%= link_to informations_path do %>
+            <div class="list-group-item"><%= information.created_at.strftime("%Y年%m月%d日") %> <%= information.title %></div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center">まだお知らせがありません</p>
     <% end %>
+    
   </div>
 </div>

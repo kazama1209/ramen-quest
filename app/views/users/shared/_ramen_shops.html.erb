@@ -8,7 +8,7 @@
         <% ramen_shops.each do |ramen_shop| %>
           <div class="col-md-4 col-sm-6 pb-4">
             <%= link_to ramen_shop_path(ramen_shop) do %>
-              <div class="card">
+              <div class="card h-100">
                 <div class="card-img-top">
                   <%= image_tag ramen_shop.image.url if ramen_shop.image? %>
                 </div>

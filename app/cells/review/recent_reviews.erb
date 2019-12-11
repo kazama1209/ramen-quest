@@ -3,7 +3,7 @@
     最新のレビュー
   </div>
   <div class="card-body p-4">
-    <% if @reviews.exists? %>
+    <% if @reviews.any? %>
       <% @reviews.each do |review| %>
         <%= link_to review_path(review) do %>
           <div class="reviews">
