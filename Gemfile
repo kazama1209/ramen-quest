@@ -89,7 +89,7 @@ gem 'sorcery'
 
 # Configuration
 gem 'config'
-gem 'dotenv-rails'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 # Internationalization
 gem 'rails-i18n'
