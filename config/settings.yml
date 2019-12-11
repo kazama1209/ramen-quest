@@ -29,3 +29,7 @@ aws:
 slack:
   webhook_url: <%= ENV['SLACK_WEBHOOK_URL'] %>
   channel: <%= ENV['SLACK_CHANNEL_NAME'] %>
+
+gmail:
+  user_name: <%= ENV['GMAIL_USER_NAME'] %>
+  password: <%= ENV['GMAIL_PASSWORD'] %>
