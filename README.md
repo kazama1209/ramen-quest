@@ -26,6 +26,8 @@
 
 お忙しい方向けに、サービスの全体像が3分でわかるように動画でまとめました。少しでも雰囲気が伝われば幸いです。
 
+[動画リンク](https://youtu.be/H6Vv5fqODRA )
+
 [![](https://img.youtube.com/vi/H6Vv5fqODRA/0.jpg)](https://www.youtube.com/watch?v=H6Vv5fqODRA)
 
 **※BGMが流れますので、再生する際は周囲にご注意ください。**
