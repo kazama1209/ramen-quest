@@ -19,6 +19,7 @@ class Users::ReviewsController < Users::ApplicationController
       address: @ramen_shop.address,
       ramen_shop_id: @ramen_shop.id,
       title: review_params[:title],
+      taste: review_params[:taste],
       rate: review_params[:rate],
       body: review_params[:body],
       image: review_params[:image]
@@ -52,6 +53,6 @@ class Users::ReviewsController < Users::ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:prefecture, :address, :shop_name, :title, :rate, :body, :image)
+    params.require(:review).permit(:prefecture, :address, :shop_name, :title, :taste, :rate, :body, :image)
   end
 end

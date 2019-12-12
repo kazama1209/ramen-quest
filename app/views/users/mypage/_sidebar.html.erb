@@ -22,6 +22,11 @@
         <% end %>
       </li>
       <li class="list-group-item list-group-item-action p-0">
+        <%= link_to mypage_charts_path(current_user), class: "d-block p-3" do %>
+          <i class="fas fa-chart-pie"></i> チャート
+        <% end %>
+      </li>
+      <li class="list-group-item list-group-item-action p-0">
         <%= link_to mypage_profile_path(current_user), class: "d-block p-3" do %>
           <i class="fas fa-address-card"></i> プロフィール
         <% end %>

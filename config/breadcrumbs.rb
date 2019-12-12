@@ -122,6 +122,11 @@ crumb :mypage_events do
   parent :mypage_dashbord
 end
 
+crumb :mypage_charts do
+  link 'チャート', mypage_charts_path
+  parent :mypage_dashbord
+end
+
 crumb :mypage_profile do
   link 'プロフィール', mypage_profile_path
   parent :mypage_dashbord
