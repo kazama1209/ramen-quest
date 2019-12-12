@@ -51,6 +51,7 @@ Rails.application.routes.draw do
       get :reviews
       get :bookmarks
       get :events
+      get :charts
       get :profile
       get :email
       get :password

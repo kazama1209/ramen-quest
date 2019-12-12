@@ -87,6 +87,7 @@ GEM
     cells-rails (0.1.0)
       actionpack (>= 5.0)
       cells (>= 4.1.6, < 5.0.0)
+    chartkick (3.3.0)
     childprocess (3.0.0)
     code_analyzer (0.4.8)
       sexp_processor
@@ -189,6 +190,8 @@ GEM
     google-analytics-rails (1.1.1)
     gretel (3.0.9)
       rails (>= 3.1.0)
+    groupdate (4.2.0)
+      activesupport (>= 5)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.9.3)
@@ -465,6 +468,7 @@ DEPENDENCIES
   carrierwave
   cells-erb
   cells-rails
+  chartkick
   coffee-rails (~> 4.2)
   config
   database_cleaner
@@ -478,6 +482,7 @@ DEPENDENCIES
   gmaps4rails
   google-analytics-rails
   gretel
+  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

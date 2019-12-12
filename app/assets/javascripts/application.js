@@ -18,4 +18,6 @@
 //= require activestorage
 //= require jquery.raty
 //= require underscore
+//= require chartkick
+//= require Chart.bundle
 //= require gmaps/google

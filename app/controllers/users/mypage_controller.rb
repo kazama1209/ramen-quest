@@ -12,6 +12,8 @@ class Users::MypageController < Users::ApplicationController
 
   def events; end
 
+  def charts; end
+
   def profile; end
 
   def email; end

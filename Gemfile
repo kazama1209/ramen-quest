@@ -123,6 +123,10 @@ gem 'rack-attack'
 gem 'geocoder'
 gem 'gmaps4rails'
 
+# Chart
+gem 'chartkick'
+gem 'groupdate'
+
 # Notification
 gem 'exception_notification'
 gem 'slack-notifier'
