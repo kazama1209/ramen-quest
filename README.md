@@ -22,6 +22,14 @@
 
 素人なりに、何よりもまずはユーザーの目線に立ち、一つのサービスを運営する上で必要なものは何かを考え、必死に手を動かしました。
 
+## 3分でわかる「Ramen Quest」
+
+お忙しい方向けに、サービスの全体像が3分でわかるように動画でまとめました。少しでも雰囲気が伝われば幸いです。
+
+[![](https://img.youtube.com/vi/H6Vv5fqODRA/0.jpg)](https://www.youtube.com/watch?v=H6Vv5fqODRA)
+
+**※BGMが流れますので、再生する際は周囲にご注意ください。**
+
 # URL
 
 [https://ramen-quest.herokuapp.com/](https://ramen-quest.herokuapp.com/)
