@@ -10,7 +10,7 @@ RSpec.describe UserMailer, type: :mailer do
     
     # メールヘッダーに以下の内容を含む
     it 'renders the headers' do
-      expect(mail.subject).to eq('ユーザー登録のご案内')
+      expect(mail.subject).to eq(Settings.mail.activation_needed)
       expect(mail.to).to eq([user.email])
       expect(mail.from).to eq([Settings.gmail.user_name])
     end
@@ -27,7 +27,7 @@ RSpec.describe UserMailer, type: :mailer do
     
     # メールヘッダーに以下の内容を含む
     it "renders the headers" do
-      expect(mail.subject).to eq('ユーザー登録完了のご案内')
+      expect(mail.subject).to eq(Settings.mail.activation_success)
       expect(mail.to).to eq([user.email])
       expect(mail.from).to eq([Settings.gmail.user_name])
     end
