@@ -1,13 +1,13 @@
 class UserMailer < ApplicationMailer
   def activation_needed_email(user)
     @user = user
-    @url  = "http://localhost:3000/signup/#{user.activation_token}/activate"
+    @url  = "https://ramen-quest.herokuapp.com/signup/#{user.activation_token}/activate"
     mail(to: user.email, subject: Settings.mail.activation_needed)
   end
 
   def activation_success_email(user)
     @user = user
-    @url  = 'http://localhost:3000/login'
+    @url  = 'https://ramen-quest.herokuapp.com/login'
     mail(to: user.email, subject: Settings.mail.activation_success)
   end
 
