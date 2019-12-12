@@ -1,10 +1,11 @@
 service:
   default_host: 'localhost:3000'
+  name: 'Ramen Quest'
   
 default_meta_tags:
-  title: &title 'ラーメンクエスト'
+  title: &title 'Ramen Quest'
   charset: 'utf-8'
-  description: &description 'ラーメンクエストは、レビューやブックマーク、ランキングなどの機能を活用し、日々のラーメン巡りを記録するためのWEBサービスです。'
+  description: &description 'Ramen Questは、レビューやブックマーク、ランキングなどの機能を活用し、日々のラーメン巡りを記録するためのWEBサービスです。'
   keywords: 'ラーメン,口コミ,レビュー,ランキング'
   reverse: true
   og:
@@ -15,9 +16,9 @@ default_meta_tags:
 
 
 mail:
-  activation_needed: 'ユーザー登録のご案内'
-  activation_success:  'ユーザー登録完了のご案内'
-  reset_password: 'パスワード再設定手続きのご案内'
+  activation_needed: '【Ramen Quest】ユーザー登録のご案内'
+  activation_success:  '【Ramen Quest】ユーザー登録完了のご案内'
+  reset_password: '【Ramen Quest】パスワード再設定手続きのご案内'
   inquiry: '【Ramen Quest】お問い合わせいただきありがとうございます'
   
 aws:
