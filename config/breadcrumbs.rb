@@ -142,7 +142,13 @@ crumb :mypage_password do
   parent :mypage_dashbord
 end
 
-crumb :user_profile do
-  link 'プロフィール'
-  parent :user_index
+crumb :users do
+  link 'ユーザー'
+  parent :root
+end
+
+
+crumb :user_profile do |user|
+  link "#{user.name}さんのプロフィール"
+  parent :users, users_profile_path
 end

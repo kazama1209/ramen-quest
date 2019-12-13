@@ -25,6 +25,18 @@
       <% end %>
     </li>
     <li class="nav-item border-bottom p-3 pl-1">
+      <%= link_to mypage_charts_path(current_user), class: "d-block w-100 clearfix" do %>
+        チャート
+        <span class="float-right text-info"><i class="fa fa-angle-right"></i></span>
+      <% end %>
+    </li>
+    <li class="nav-item border-bottom p-3 pl-1">
+      <%= link_to mypage_profile_path, class: "d-block w-100 clearfix" do %>
+        プロフィール
+        <span class="float-right text-info"><i class="fa fa-angle-right"></i></span>
+      <% end %>
+    </li>
+    <li class="nav-item border-bottom p-3 pl-1">
       <%= link_to mypage_email_path, class: "d-block w-100 clearfix" do %>
         メールアドレス
         <span class="float-right text-info"><i class="fa fa-angle-right"></i></span>
@@ -33,12 +45,6 @@
     <li class="nav-item border-bottom p-3 pl-1">
       <%= link_to mypage_password_path, class: "d-block w-100 clearfix" do %>
         パスワード
-        <span class="float-right text-info"><i class="fa fa-angle-right"></i></span>
-      <% end %>
-    </li>
-    <li class="nav-item border-bottom p-3 pl-1">
-      <%= link_to mypage_profile_path, class: "d-block w-100 clearfix" do %>
-        プロフィール
         <span class="float-right text-info"><i class="fa fa-angle-right"></i></span>
       <% end %>
     </li>

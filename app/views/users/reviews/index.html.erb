@@ -25,7 +25,14 @@
       </div>
     </div>
     <%= render 'users/reviews/map' %>
-    <%= render 'users/shared/reviews', title: 'みんなのレビュー', reviews: @reviews  %>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        みんなのレビュー（<%= @reviews.count %>件）
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/reviews', reviews: @reviews %>
+      </div>
+    </div>
   </div>
   <div class="col-md-4">
     <%= render 'users/shared/sidemenu' %>

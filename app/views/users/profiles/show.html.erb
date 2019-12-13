@@ -1,0 +1,40 @@
+<% breadcrumb :user_profile, @user %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 mb-4">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        <%= @user.name %>さんのプロフィール
+      </div>
+      <div class="card-body p-4">
+        <div class="user">
+          <div class="image">
+            <%= image_tag(@user.image.url) if @user.image %>
+          </div>
+        </div>
+        <p class="text-center fs-26 p-2"><%= @user.name %></p>
+        <div class="text-center">
+          <%= @user.profile? ? simple_format(current_user.profile) : 'まだ自己紹介文が入力されていません。' %>
+        </div>
+        <ul class="nav nav-tabs nav-fill nav-pills mt-5">
+          <li class="nav-item">
+            <a href="#tab1" class="nav-link navbar-default active" data-toggle="tab">投稿レビュー (<%= @user.reviews.count %>)</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tab2" class="nav-link navbar-default" data-toggle="tab">ブックマークを付けた店 (<%= @user.bookmarks.count %>)</a>
+          </li>
+        </ul>
+        <div class="tab-content mt-3">
+          <div id="tab1" class="tab-pane active">
+            <%= render 'users/shared/reviews', reviews: @user.reviews.page(params[:page]).order(created_at: :desc) %>
+          </div>
+          <div id="tab2" class="tab-pane">
+            <%= render 'users/shared/bookmarks', bookmarks: @user.bookmarks.includes(:ramen_shop).page(params[:page]).order(created_at: :desc) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>
