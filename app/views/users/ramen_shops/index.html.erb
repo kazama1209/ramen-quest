@@ -25,7 +25,14 @@
       </div>
     </div>
     <%= render 'users/ramen_shops/map' %>
-    <%= render 'users/shared/ramen_shops', title: '店舗一覧', ramen_shops: @ramen_shops  %>
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        店舗一覧（<%= @ramen_shops.count %>件）
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/ramen_shops', ramen_shops: @ramen_shops  %>
+      </div>
+    </div>
   </div>
   <div class="col-md-4">
     <%= render 'users/shared/sidemenu' %>

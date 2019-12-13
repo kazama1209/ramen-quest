@@ -41,7 +41,15 @@
         <%= render 'users/completions/button', ramen_shop: @ramen_shop %>
       </div>
     </div>
-    <%= render 'users/shared/reviews', title: 'この店のレビュー', reviews_count: @ramen_shop.reviews.count, reviews: @reviews  %>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        この店のレビュー（<%= @reviews.count %>件）
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/reviews', reviews: @ramen_shop.reviews.includes(:user).page(params[:page]).order(created_at: :desc) %>
+      </div>
+    </div>
+    
     <div class="card bg-white border-none shadow-sm mt-3">
       <div class="card-header font-weight-bold">
         レビューを書く

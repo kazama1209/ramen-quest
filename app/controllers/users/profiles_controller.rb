@@ -6,17 +6,15 @@ class Users::ProfilesController < Users::ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      flash[:success] = 'プロフィールを変更しました'
-      redirect_to dashboard_index_path
-    else
-      render :edit
-    end
+    render :edit unless current_user.update(user_params)
+
+    flash[:success] = 'プロフィールを変更しました'
+    redirect_to mypage_profile_path
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :gender, :profile, :image)
+    params.require(:user).permit(:name, :profile, :image)
   end
 end

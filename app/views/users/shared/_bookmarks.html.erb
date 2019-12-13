@@ -1,36 +1,29 @@
-<div class="card bg-white border-none shadow-sm">
-  <div class="card-header font-weight-bold">
-    <%= title %>（<%= bookmarks.count %>件）
-  </div>
-  <div class="card-body p-4">
-    <div class="row">
-      <% if bookmarks.exists? %>
-        <% bookmarks.each do |bookmark| %>
-          <div class="col-md-4 col-sm-6 pb-4">
-            <%= link_to ramen_shop_path(bookmark.ramen_shop) do %>
-              <div class="card h-100">
-                <div class="card-img-top">
-                  <%= image_tag bookmark.ramen_shop.image.url if bookmark.ramen_shop.image? %>
-                </div>
-              	<div class="card-body">
-              		<p class="card-title font-weight-bold"><%= bookmark.ramen_shop.name %>（<%= bookmark.ramen_shop.prefecture %>）</p>
-              		<p class="fs-12">（<%= bookmark.ramen_shop.reviews.count %>件のレビュー）</p>
-              		<% if bookmark.ramen_shop.completions.exists? %>
-              		  <span class="badge badge-success">訪問済み</span>
-              		<% else %>
-              		  <span class="badge badge-danger">未訪問</span>
-              		<% end %>
-              	</div>
-              </div>
-            <% end %>
+<div class="row">
+  <% if bookmarks.exists? %>
+    <% bookmarks.each do |bookmark| %>
+      <div class="col-md-4 col-sm-6 pb-4">
+        <%= link_to ramen_shop_path(bookmark.ramen_shop) do %>
+          <div class="card h-100">
+            <div class="card-img-top">
+              <%= image_tag bookmark.ramen_shop.image.url if bookmark.ramen_shop.image? %>
+            </div>
+          	<div class="card-body">
+          		<p class="card-title font-weight-bold"><%= bookmark.ramen_shop.name %>（<%= bookmark.ramen_shop.prefecture %>）</p>
+          		<p class="fs-12">（<%= bookmark.ramen_shop.reviews.count %>件のレビュー）</p>
+          		<% if bookmark.ramen_shop.completions.exists? %>
+          		  <span class="badge badge-success">訪問済み</span>
+          		<% else %>
+          		  <span class="badge badge-danger">未訪問</span>
+          		<% end %>
+          	</div>
           </div>
         <% end %>
-      <% else %>
-      <div class="col-md-12">
-        <p class="text-center">まだブックマークがありません</p>  
       </div>
-      <% end %>
-    </div>
-    <%= paginate bookmarks %>
+    <% end %>
+  <% else %>
+  <div class="col-md-12">
+    <p class="text-center">まだブックマークがありません</p>  
   </div>
+  <% end %>
 </div>
+<%= paginate bookmarks %>

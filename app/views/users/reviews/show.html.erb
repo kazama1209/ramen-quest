@@ -38,10 +38,14 @@
           <div class="card-body">
             <div class="reviewer">
               <div class="reviewer-image">
-                <%= image_tag @review.user.image.url %>
+                <%= link_to users_profile_path(@review.user) do %>
+                  <%= image_tag @review.user.image.url %>
+                <% end %>
               </div>
               <div class="reviewer-profile">
-                <p class="font-weight-bold"><u><%= @review.user.name %></u></p>
+                <%= link_to users_profile_path(@review.user) do %>
+                  <p class="font-weight-bold"><u><%= @review.user.name %></u></p>
+                <% end %>
                 <p class="clearfix m-0"><%= @review.user.profile %></p>
               </div>
             </div>

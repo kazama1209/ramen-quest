@@ -72,6 +72,10 @@ Rails.application.routes.draw do
     end
   end
   
+  namespace :users do
+    resources :profiles, only: %i[show]
+  end
+  
   namespace :admins do
     resources :dashboard, only: %i[index]
     resources :users, only: %i[index new create edit update destroy]

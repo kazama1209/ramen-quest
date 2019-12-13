@@ -1,8 +1,22 @@
 <% breadcrumb :mypage_reviews %>
 <div class="row pt-3 pb-5">
   <div class="col-sm-8 order-md-2 mb-3">
-    <%= render 'users/shared/reviews', title: '自分のレビュー', reviews: @my_reviews %>
-    <%= render 'users/shared/favorites', title: 'いいね！を付けたレビュー', favorites: @favorite_reviews %>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        自分のレビュー（<%= @my_reviews.count %>件）
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/reviews', reviews: @my_reviews %>
+      </div>
+    </div>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        いいね！を付けたレビュー（<%= @favorite_reviews.count %>件）
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/favorites', favorites: @favorite_reviews %>
+      </div>
+    </div>
     <%= render 'users/mypage/sp_menu' %>
   </div>
   <div class="col-sm-4 order-md-1">
