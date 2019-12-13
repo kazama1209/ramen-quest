@@ -9,7 +9,7 @@ class Users::ProfilesController < Users::ApplicationController
     render :edit unless current_user.update(user_params)
 
     flash[:success] = 'プロフィールを変更しました'
-    redirect_to mypage_profile_path
+    redirect_to dashboard_index_path
   end
 
   private
