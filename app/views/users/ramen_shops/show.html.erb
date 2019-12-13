@@ -49,7 +49,6 @@
         <%= render 'users/shared/reviews', reviews: @ramen_shop.reviews.includes(:user).page(params[:page]).order(created_at: :desc) %>
       </div>
     </div>
-    
     <div class="card bg-white border-none shadow-sm mt-3">
       <div class="card-header font-weight-bold">
         レビューを書く
