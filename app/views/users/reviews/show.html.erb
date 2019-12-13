@@ -5,7 +5,9 @@
       <div class="card-body p-4">
         <div class="row mb-3">
           <div class="col-md-4 offset-md-4">
-            <h1 class="m-0 font-weight-bold text-center"><%= @review.shop_name %></h1>
+            <h1 class="m-0 font-weight-bold text-center">
+              <%= link_to @review.shop_name, ramen_shop_path(@review.ramen_shop) %>
+            </h1>
           </div>
           <% if logged_in? %>
             <% if @review.user.id == current_user.id %>

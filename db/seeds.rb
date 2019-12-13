@@ -87,7 +87,7 @@ RamenShop.create!(
 RamenShop.create!(
   id: 3,
   name: '麵屋3',
-  prefecture: 1,
+  prefecture: 47,
   address: '沖縄県那覇市金城５－４－６',
   latitude: 26.197937,
   longitude: 127.666322,
