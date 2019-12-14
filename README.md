@@ -1,5 +1,7 @@
 # Ramen Quest
 
+[English.ver](https://github.com/kazama1209/ramen-quest/blob/master/README_EN.md)
+
 [![CircleCI](https://circleci.com/gh/kazama1209/ramen-quest.svg?style=shield)](https://circleci.com/gh/kazama1209/ramen-quest)
 
 ## サービス概要
@@ -18,9 +20,19 @@
 
 しかしながら、Rails最大の強みでもある「MVCアーキテクチャ」の概念にひたすら忠実に従い、何よりも基本を意識した構成を心掛けております。
 
-**また、ただ見せるために作ったわけではなく、将来、現実に運用する事となった場合を想定し、そのために必要な技術も多数取り入れています。（細かな導入技術については後述のリストや実際のコードを見ていただけると幸いです。）**
+**また、ただ単に「見せるため」に作ったわけではなく、将来、現実として運用する事となった場合を想定し、そのために必要な技術も多数取り入れています。（細かな導入技術については後述のリストや実際のコードを見ていただけると幸いです。）**
 
 素人なりに、何よりもまずはユーザーの目線に立ち、一つのサービスを運営する上で必要なものは何かを考え、必死に手を動かしました。
+
+## 3分でわかる「Ramen Quest」
+
+お忙しい方向けに、サービスの全体像が3分でわかるように動画でまとめました。少しでも雰囲気が伝われば幸いです。
+
+[動画リンク](https://youtu.be/H6Vv5fqODRA )
+
+[![](https://img.youtube.com/vi/H6Vv5fqODRA/0.jpg)](https://www.youtube.com/watch?v=H6Vv5fqODRA)
+
+**※BGMが流れますので、再生する際は周囲にご注意ください。**
 
 # URL
 
