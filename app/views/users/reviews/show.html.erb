@@ -33,7 +33,9 @@
         <div class="p-2">
           <p class="text-info font-weight-bold"><%= @review.created_at.strftime("%Y年%m月%d日") %>投稿</p>
           <%= simple_format(@review.body) %>
-          <%= render 'users/likes/button', review: @review %>
+          <div id="likeButton">
+            <%= render 'users/likes/button', review: @review %>
+          </div>
         </div>
         <div class="card mt-5">
           <div class="card-header">このレビューを書いた人</div>

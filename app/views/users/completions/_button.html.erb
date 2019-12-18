@@ -1,10 +1,10 @@
 <% if logged_in? %>
   <% if current_user.completions.find_by(ramen_shop_id: ramen_shop.id) %>
-    <%= link_to ramen_shop_completion_path(ramen_shop), method: :delete, class: "btn btn-success btn-sm incompletion" do %>
+    <%= link_to ramen_shop_completion_path(ramen_shop_id: ramen_shop.id, id: ramen_shop.id), method: :delete, remote: true, class: "btn btn-success btn-sm incompletion" do %>
       <i class="fas fa-flag"></i> 訪問済み
     <% end %>
   <% else %>
-    <%= link_to ramen_shop_completions_path(ramen_shop), method: :post, class: "btn btn-danger btn-sm completion" do %>
+    <%= link_to ramen_shop_completions_path(ramen_shop.id), method: :post, remote: true, class: "btn btn-danger btn-sm completion" do %>
       <i class="far fa-flag"></i> 未訪問
     <% end %>
   <% end %>
