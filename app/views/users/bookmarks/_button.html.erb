@@ -1,11 +1,11 @@
 <% if logged_in? %>
   <% if current_user.bookmarks.find_by(ramen_shop_id: ramen_shop.id) %>
-    <%= link_to ramen_shop_bookmark_path(ramen_shop), method: :delete, class: "btn btn-warning text-white btn-sm" do %>
-      <i class="fas fa-bookmark"></i> ブックマーク中
+    <%= link_to ramen_shop_bookmark_path(ramen_shop_id: ramen_shop.id, id: ramen_shop.id), remote: true, method: :delete, class: "btn btn-warning text-white btn-sm" do %>
+      <i class="fas fa-bookmark"></i> ブックマークを削除
     <% end %>
   <% else %>
-    <%= link_to ramen_shop_bookmarks_path(ramen_shop), method: :post, class: "btn btn-warning text-white btn-sm" do %>
-      <i class="far fa-bookmark"></i> ブックマーク
+    <%= link_to ramen_shop_bookmarks_path(ramen_shop.id), method: :post, remote: true, class: "btn btn-warning text-white btn-sm" do %>
+      <i class="far fa-bookmark"></i> ブックマークを登録
     <% end %>
   <% end %>
 <% end %>

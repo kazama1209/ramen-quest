@@ -66,6 +66,7 @@ group :test do
   gem 'launchy', '~> 2.4.3'
   gem 'rspec-rails', '~> 3.6'
   gem 'rspec_junit_formatter'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'webdrivers', '~> 3.0'
 end

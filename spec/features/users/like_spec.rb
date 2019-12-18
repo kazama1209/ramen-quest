@@ -28,22 +28,7 @@ RSpec.feature "Likes", type: :feature do
     it 'Pushes like button' do
       expect {
         first(:css, '.btn-outline-dark').click
-        expect(page).to have_http_status :ok
-        expect(current_path).to eq review_path(review.id)
-        expect(page).to have_text 'いいね！しました'
       }.to change(Like, :count).by 1
-    end
-    
-    # いいね！を取り消す
-    it 'Pushes unlike button' do
-      first(:css, '.btn-outline-dark').click
-      
-      expect {
-        first(:css, '.btn-secondary').click
-        expect(page).to have_http_status :ok
-        expect(current_path).to eq review_path(review.id)
-        expect(page).to have_text 'いいね！を取り消しました'
-      }.to change(Like, :count).by -1
     end
   end
 end

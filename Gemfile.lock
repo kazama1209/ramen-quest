@@ -509,6 +509,7 @@ DEPENDENCIES
   rspec_junit_formatter
   rubocop
   sass-rails (~> 5.0)
+  selenium-webdriver
   shoulda-matchers
   simple_calendar
   simple_form

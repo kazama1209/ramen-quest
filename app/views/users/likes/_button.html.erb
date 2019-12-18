@@ -1,11 +1,11 @@
 <% if logged_in? %>
   <% if current_user.likes.find_by(review_id: review.id) %>
-    <%= link_to review_like_path(review), method: :delete, class: "btn btn-secondary btn-sm" do %>
+    <%= link_to review_like_path(review_id: review.id, id: review.id), method: :delete, remote: true, class: "btn btn-secondary btn-sm unlike-button" do %>
       <i class="fas fa-thumbs-up"></i> いいねを取り消す
       (<%= review.likes.count %>)
     <% end %>
   <% else %>
-    <%= link_to review_likes_path(review), method: :post, class: "btn btn-outline-dark btn-sm" do %>
+    <%= link_to review_likes_path(review.id), method: :post, remote: true, class: "btn btn-outline-dark btn-sm" do %>
       <i class="far fa-thumbs-up"></i> いいね
       (<%= review.likes.count %>)
     <% end %>

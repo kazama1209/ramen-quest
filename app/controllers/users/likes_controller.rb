@@ -1,21 +1,22 @@
 class Users::LikesController < Users::ApplicationController
   before_action :only_user
+  before_action :set_review, only: %i[create destroy]
 
   def create
     @like = current_user.likes.build(review_id: params[:review_id])
 
     return unless @like.save
-
-    flash[:success] = 'いいね！しました'
-    redirect_to review_path(@like.review)
   end
 
   def destroy
     @like = Like.find_by(user_id: current_user.id, review_id: params[:review_id])
 
     return unless @like.destroy
+  end
 
-    flash[:success] = 'いいね！を取り消しました'
-    redirect_to review_path(@like.review)
+  private
+
+  def set_review
+    @review = Review.unscoped.find(params[:review_id])
   end
 end
