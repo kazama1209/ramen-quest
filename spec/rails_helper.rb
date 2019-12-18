@@ -76,6 +76,8 @@ RSpec.configure do |config|
   config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
   
   config.include AuthenticationForFeatureRequest, type: :feature
+  config.include WaitForCss, type: :feature
+  config.include WaitForAjax, type: :feature
   
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|

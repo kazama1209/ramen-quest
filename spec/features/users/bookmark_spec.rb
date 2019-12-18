@@ -29,20 +29,7 @@ RSpec.feature "Bookmarks", type: :feature do
     it 'Creates bookmark' do
       expect {
         first(:css, '.btn-warning').click
-        expect(page).to have_http_status :ok
-        expect(current_path).to eq ramen_shop_path(ramen_shop.id)
       }.to change(Bookmark, :count).by 1
-    end
-    
-    # ブックマークを取り消す
-    it 'Destroys bookmark' do
-      first(:css, '.btn-warning').click
-      
-      expect {
-        first(:css, '.btn-warning').click
-        expect(page).to have_http_status :ok
-        expect(current_path).to eq ramen_shop_path(ramen_shop.id)
-      }.to change(Bookmark, :count).by -1
     end
   end
 end

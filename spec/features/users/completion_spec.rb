@@ -25,24 +25,11 @@ RSpec.feature "Bookmarks", type: :feature do
       visit ramen_shop_path(ramen_shop.id)
     end
     
-    # 「制覇」マークを付ける
+    # 訪問済みにする
     it 'Creates completion' do
       expect {
         first(:css, '.completion').click
-        expect(page).to have_http_status :ok
-        expect(current_path).to eq ramen_shop_path(ramen_shop.id)
       }.to change(Completion, :count).by 1
-    end
-    
-    # ブックマークを取り消す
-    it 'Destroys completion' do
-      first(:css, '.completion').click
-      
-      expect {
-        first(:css, '.incompletion').click
-        expect(page).to have_http_status :ok
-        expect(current_path).to eq ramen_shop_path(ramen_shop.id)
-      }.to change(Completion, :count).by -1
     end
   end
 end
