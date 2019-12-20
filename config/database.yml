@@ -20,6 +20,10 @@ default: &default
 development:
   <<: *default
   database: ramen_development
+  username: root
+  password: password
+  host: db
+  port: 3306
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
