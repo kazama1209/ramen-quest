@@ -1,0 +1,32 @@
+version: '3'
+services:
+  mysql:
+    image: "mysql:5.7"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: "ramen_development"
+      MYSQL_ROOT_PASSWORD: null
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+  rails:
+    build: .
+    depends_on:
+      - mysql
+    volumes:
+      - .:/usr/src/app
+      - vendor_bundle:/usr/src/app/vendor/bundle
+    ports:
+      - "3000:3000"
+    entrypoint:
+      - bin/rails
+      - s
+      - -b
+      - 0.0.0.0
+ 
+volumes:
+  mysql_data:
+    driver: local
+  vendor_bundle:
+    driver: local
