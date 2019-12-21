@@ -6,7 +6,7 @@
 
 ## サービス概要
 
-![ラーメンクエスト トップページ](https://user-images.githubusercontent.com/51913879/70669028-8dfdc480-1cb8-11ea-8b47-6902ce17b9f0.png)
+![ラーメンクエスト トップ](https://user-images.githubusercontent.com/51913879/71307376-d479be80-2430-11ea-9c83-cc57897de80e.png)
 
 ラーメンほど奥深い食べ物はそうそうありません。お店によって全く異なる顔を見せてくれるラーメンをめぐる日々は、まさに冒険（quest）そのものとだと私は考えています。
 
@@ -66,8 +66,8 @@
 - 画像アップロード（carrierwave、mini_magick、 AWS S3、 fog）
 - レビュー（jquery.raty）
 - カレンダー（simple_calendar）
-- いいね！
-- ブックマーク
+- いいね、ブックマーク（Ajax）
+- チャート(chartkick)
 - エディタ（medium-editor）
 - マークダウン（redcarpet）
 - パーシャル（cells）
