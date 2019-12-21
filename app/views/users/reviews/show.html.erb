@@ -25,7 +25,9 @@
         <div id="review-rate-<%= @review.id %>" class="text-center mt-2 mb-4"></div>
         <div class="text-center">
           <div class="image-box">
-            <%= image_tag @review.image.medium.url if @review.image? %>
+            <%=  link_to @review.image.url, 'data-lightbox': @review.image do %>
+              <%= image_tag @review.image.medium.url if @review.image? %>
+            <% end %>
           </div>
         </div>
         <%= render 'users/shared/social_button', model: @review %>
