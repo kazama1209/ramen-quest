@@ -1,11 +1,23 @@
 <% if current_page?(root_path) %>
-  <div class="cover mb-5">
-    <div class="cover-inner">
-      <div class="cover-contents">
-        <h1>ラーメンとは、</br>冒険そのものである。</h1>
+
+  <div class="swiper-container mb-5">
+    <h1>ラーメンとは、<br>
+        果てしない冒険。
+    </h1>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <%= image_tag 'ramen.jpg'%>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag 'tsukemen.jpg'%>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag 'aburasoba.jpg'%>
       </div>
     </div>
   </div>
+  
+  
   <div class="container mb-5">
     <h2 class="font-weight-bold text-center my-3">Ramen Questとは？</h1>
     <p class="text-center mb-5">それは、魂の一杯を求める者たちの物語…。</p>
@@ -40,4 +52,19 @@
       </div>
     <% end %>
   </div>
+  
 <% end %>
+
+
+<script>
+  let swipeOption = {
+    loop: true,
+    effect: 'fade',
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    speed: 2000,
+  }
+  new Swiper('.swiper-container', swipeOption);
+</script>
