@@ -8,7 +8,11 @@
         <h1 class="text-center font-weight-bold"><%= simple_format(@article.title) %></h1>
         <p class="text-right"><%= @article.created_at.strftime("%Y-%m-%d %H:%M") %></p>
         <div class="text-center">
-          <%= image_tag @article.image.medium.url if @article.image? %>
+          <div class="image-box">
+            <%=  link_to @article.image.url, 'data-lightbox': @article.image do %>
+              <%= image_tag @article.image.medium.url if @article.image? %>
+            <% end %>
+          </div>
         </div>
         <%= render 'users/shared/social_button', model: @article %>
         <%= simple_format(@article.body) %>
