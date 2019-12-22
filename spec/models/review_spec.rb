@@ -31,7 +31,7 @@ RSpec.describe Review, type: :model do
     it { is_expected.to validate_presence_of(:body) }
     
     # 写真がなければ無効
-    it { is_expected.to validate_presence_of(:image) }
+    it { is_expected.to validate_presence_of(:image1) }
   end
   
   describe "Associations" do

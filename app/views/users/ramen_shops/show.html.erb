@@ -60,7 +60,7 @@
         レビューを書く
       </div>
       <div class="card-body p-4">
-        <%= simple_form_for(Review.new, url: reviews_path(@ramen_shop.id), method: :post, local: true) do |f| %>
+        <%= simple_form_for(current_user.reviews.new, url: reviews_path(@ramen_shop.id), method: :post, local: true) do |f| %>
           <%= render 'users/reviews/form', f: f %>
         <% end %>
       </div>

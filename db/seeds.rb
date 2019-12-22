@@ -107,7 +107,9 @@ Review.create!(
   taste: 1,
   rate: 4.5,
   body: '美味しかったです',
-  image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/1.jpg"),
+  image1: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/1.jpg"),
+  image2: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/1.jpg"),
+  image3: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/1.jpg"),
   user_id: 2,
   ramen_shop_id: 1
 )
@@ -121,7 +123,9 @@ Review.create!(
   taste: 2,
   rate: 4,
   body: '美味しかったです',
-  image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/2.jpg"),
+  image1: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/2.jpg"),
+  image2: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/2.jpg"),
+  image3: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/2.jpg"),
   user_id: 3,
   ramen_shop_id: 2
 )
@@ -135,7 +139,9 @@ Review.create!(
   taste: 3,
   rate: 5,
   body: '美味しかったです',
-  image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg"),
+  image1: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg"),
+  image2: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg"),
+  image3: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg"),
   user_id: 4,
   ramen_shop_id: 3
 )

@@ -24,9 +24,19 @@
         </div>
         <div id="review-rate-<%= @review.id %>" class="text-center mt-2 mb-4"></div>
         <div class="text-center">
-          <div class="image-box">
-            <%=  link_to @review.image.url, 'data-lightbox': @review.image do %>
-              <%= image_tag @review.image.medium.url if @review.image? %>
+          <div class="d-inline image-box">
+            <%=  link_to @review.image1.url, 'data-lightbox': @review.image1 do %>
+              <%= image_tag @review.image1.thumb.url if @review.image1? %>
+            <% end %>
+          </div>
+          <div class="d-inline image-box mx-3">
+            <%=  link_to @review.image2.url, 'data-lightbox': @review.image2 do %>
+              <%= image_tag @review.image2.thumb.url if @review.image2? %>
+            <% end %>
+          </div>
+          <div class="d-inline image-box">
+            <%=  link_to @review.image3.url, 'data-lightbox': @review.image3 do %>
+              <%= image_tag @review.image3.thumb.url if @review.image3? %>
             <% end %>
           </div>
         </div>

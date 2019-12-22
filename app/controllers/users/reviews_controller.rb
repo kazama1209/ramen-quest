@@ -11,24 +11,18 @@ class Users::ReviewsController < Users::ApplicationController
   def show; end
 
   def create
-    @ramen_shop = RamenShop.find(params[:format])
+    ramen_shop = RamenShop.find(params[:format])
+    review = current_user.reviews.new(review_params)
 
-    unless current_user.reviews.create(
-      shop_name: @ramen_shop.name,
-      prefecture: @ramen_shop.prefecture,
-      address: @ramen_shop.address,
-      ramen_shop_id: @ramen_shop.id,
-      title: review_params[:title],
-      taste: review_params[:taste],
-      rate: review_params[:rate],
-      body: review_params[:body],
-      image: review_params[:image]
-    )
-      render :new
-    end
+    review.shop_name = ramen_shop.name
+    review.prefecture = ramen_shop.prefecture
+    review.address = ramen_shop.address
+    review.ramen_shop_id = ramen_shop.id
+
+    render :new unless review.save
 
     flash[:success] = 'レビューを投稿しました'
-    redirect_to ramen_shop_path(@ramen_shop)
+    redirect_to ramen_shop_path(ramen_shop)
   end
 
   def edit; end
@@ -53,6 +47,6 @@ class Users::ReviewsController < Users::ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:prefecture, :address, :shop_name, :title, :taste, :rate, :body, :image)
+    params.require(:review).permit(:title, :taste, :rate, :body, :image1, :image2, :image3)
   end
 end

@@ -9,7 +9,7 @@ class Review < ApplicationRecord
   validates :title, presence: true
   validates :rate, presence: true
   validates :body, presence: true
-  validates :image, presence: true
+  validates :image1, presence: true
 
   enum prefecture: {
     北海道: 1, 青森県: 2, 岩手県: 3, 宮城県: 4, 秋田県: 5, 山形県: 6, 福島県: 7,
@@ -24,5 +24,7 @@ class Review < ApplicationRecord
 
   enum taste: { 未選択: 0, 醤油系: 1, 味噌系: 2, 塩系: 3, 豚骨系: 4, その他: 5 }
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image1, ImageUploader
+  mount_uploader :image2, ImageUploader
+  mount_uploader :image3, ImageUploader
 end
