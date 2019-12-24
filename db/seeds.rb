@@ -59,6 +59,7 @@ users.each do |user|
   user.activate!
 end
 
+puts 'Completed!'
 
 puts 'Creating RamenShop...'
 
@@ -95,6 +96,7 @@ RamenShop.create!(
   image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg")
 )
 
+puts 'Completed!'
 
 puts 'Creating Review...'
 
@@ -107,7 +109,7 @@ Review.create!(
   taste: 1,
   rate: 4.5,
   body: '美味しかったです',
-  image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/1.jpg"),
+  images: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/1.jpg"),
   user_id: 2,
   ramen_shop_id: 1
 )
@@ -121,7 +123,7 @@ Review.create!(
   taste: 2,
   rate: 4,
   body: '美味しかったです',
-  image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/2.jpg"),
+  images: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/2.jpg"),
   user_id: 3,
   ramen_shop_id: 2
 )
@@ -135,7 +137,7 @@ Review.create!(
   taste: 3,
   rate: 5,
   body: '美味しかったです',
-  image: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg"),
+  images: File.open("#{Rails.root}/db/fixtures/images/ramen_shops/3.jpg"),
   user_id: 4,
   ramen_shop_id: 3
 )

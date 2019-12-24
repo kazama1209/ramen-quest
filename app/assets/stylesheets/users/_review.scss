@@ -113,3 +113,16 @@
   max-height: 300px;
   overflow-x: hidden;
 }
+
+.carousel-indicators {
+  & li {
+    border-radius: 50%;
+    margin: 1px 3px;
+    height: 10px;;
+    max-width: 10px;
+  }
+}
+
+.carousel-item img {
+  width: 100%;
+}

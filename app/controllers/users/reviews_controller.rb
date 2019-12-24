@@ -22,7 +22,7 @@ class Users::ReviewsController < Users::ApplicationController
       taste: review_params[:taste],
       rate: review_params[:rate],
       body: review_params[:body],
-      image: review_params[:image]
+      images: review_params[:images]
     )
       render :new
     end
@@ -53,6 +53,6 @@ class Users::ReviewsController < Users::ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:prefecture, :address, :shop_name, :title, :taste, :rate, :body, :image)
+    params.require(:review).permit(:title, :taste, :rate, :body, images: [])
   end
 end

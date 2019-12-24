@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_204835) do
+ActiveRecord::Schema.define(version: 2019_12_23_090413) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category", default: 0
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_204835) do
     t.integer "taste", default: 0
     t.float "rate"
     t.text "body"
-    t.string "image"
+    t.string "images"
     t.bigint "user_id"
     t.bigint "ramen_shop_id"
     t.datetime "created_at", null: false
