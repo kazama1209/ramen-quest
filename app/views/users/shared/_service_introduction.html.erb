@@ -1,5 +1,4 @@
 <% if current_page?(root_path) %>
-
   <div class="swiper-container mb-5">
     <h1>ラーメンとは、<br>
         果てしない冒険。
@@ -16,9 +15,7 @@
       </div>
     </div>
   </div>
-  
-  
-  <div class="container mb-5">
+  <div class="container mb-4">
     <h2 class="font-weight-bold text-center my-3">Ramen Questとは？</h1>
     <p class="text-center mb-5">それは、魂の一杯を求める者たちの物語…。</p>
     <div class="row">
@@ -39,7 +36,7 @@
       </div>
     </div>
     <% unless logged_in? %>
-      <div class="col-md-12 p-4 mb-4">
+      <div class="col-md-12 p-4">
         <div class="text-center">
           <%= form_with model: User.new, url: login_path, local: true do |f| %>
             <%= f.hidden_field :email, value: "test@example.com" %>
