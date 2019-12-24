@@ -29,9 +29,6 @@ RSpec.describe Review, type: :model do
     
     # 本文がなければ無効
     it { is_expected.to validate_presence_of(:body) }
-    
-    # 写真がなければ無効
-    it { is_expected.to validate_presence_of(:images) }
   end
   
   describe "Associations" do
