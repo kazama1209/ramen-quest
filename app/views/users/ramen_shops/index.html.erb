@@ -1,6 +1,21 @@
 <% breadcrumb :ramen_shops %>
 <div class="row pt-3 pb-5">
   <div class="col-md-8 mb-3">
+    <% if logged_in? %>
+      <div class="card bg-white border-none shadow-sm mb-3">
+        <div class="card-header font-weight-bold">
+          店舗情報の追加
+        </div>
+        <div class="card-body">
+          <%= link_to new_ramen_shop_path, class: "btn-block btn btn-success" do %>
+            <i class="fas fa-edit"></i> 追加する
+          <% end %>
+          <small>
+            <p class="pt-3">※まだデータベースに情報が無い場合はこちらから追加をお願いします。</p>
+          </small>
+        </div>
+      </div>
+    <% end %>
     <div class="card bg-white border-none shadow-sm mb-3">
       <div class="card-header font-weight-bold">
         フリーワードから探す

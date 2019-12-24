@@ -3,7 +3,7 @@
     <%= link_to review_path(favorite.review) do %>
       <div class="reviews">
         <div class="review-image">
-          <%= image_tag favorite.review.image.url if favorite.review.image? %>
+          <%= image_tag favorite.review.images[0].url if favorite.review.images? %>
         </div>
         <div class="review-content">
           <h2 class="fs-22 font-weight-bold">

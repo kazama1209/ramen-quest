@@ -1,5 +1,8 @@
 <aside>
   <div class="d-md-block d-none">
+    <% if logged_in? %>
+      <%= cell(:browsing_history).(:recent_browsing_histories) %>
+    <% end %>
     <div class="card bg-white border-none shadow-sm mb-3">
       <div class="card-header font-weight-bold">
         スポンサードリンク
@@ -12,35 +15,40 @@
     </div>
     <div class="card bg-white border-none shadow-sm mb-3">
       <div class="card-header font-weight-bold">
-        店舗情報の追加
+        公式SNS
       </div>
-      <div class="card-body">
-        <%= link_to new_ramen_shop_path, class: "btn-block btn btn-success" do %>
-          <i class="fas fa-edit"></i> 追加する
-        <% end %>
-        <small>
-          <p class="pt-3">まだデータベースに情報が無い場合はこちらから追加をお願いします。</p>
-        </small>
-      </div>
-    </div>
-    <div class="card bg-white border-none shadow-sm mb-3">
-      <div class="card-header font-weight-bold">
-        ラーメンクエスト公式SNS
-      </div>
-      <div class="card-body">
+      <div class="card-body text-center">
         <%= link_to "#", target: "_blank" do %>
           <i class="fab fa-twitter-square fa-2x"></i>
         <% end %>
         <%= link_to "#", target: "_blank" do %>
-          <i class="fab fa-facebook-square fa-2x mx-2"></i>
+          <i class="fab fa-facebook-square fa-2x"></i>
         <% end %>
         <%= link_to "#", target: "_blank" do %>
           <i class="fab fa-line fa-2x"></i>
         <% end %>
+        <%= link_to "#", target: "_blank" do %>
+          <i class="fab fa-youtube-square fa-2x"></i>
+        <% end %>
+        <%= link_to "#", target: "_blank" do %>
+          <i class="fab fa-google-plus-square fa-2x"></i>
+        <% end %>
+        <%= link_to "#", target: "_blank" do %>
+          <i class="fab fa-whatsapp-square fa-2x"></i>
+        <% end %>
+        <%= link_to "#", target: "_blank" do %>
+          <i class="fab fa-viadeo-square fa-2x"></i>
+        <% end %>
+        <%= link_to "#", target: "_blank" do %>
+          <i class="fab fa-vimeo-square fa-2x"></i>
+        <% end %>
+        <%= link_to "#", target: "_blank" do %>
+          <i class="fab fa-pinterest-square fa-2x"></i>
+        <% end %>
       </div>
     </div>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <a class="twitter-timeline" height="500px" href="https://twitter.com/Ramen_Quest_App?ref_src=twsrc%5Etfw" lang="ja">Tweets by Ramen_Quest_App</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>  
   </div>
-  <% if logged_in? %>
-    <%= cell(:browsing_history).(:recent_browsing_histories) %>
-  <% end %>
 </aside>
