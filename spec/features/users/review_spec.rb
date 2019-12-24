@@ -29,8 +29,8 @@ RSpec.feature 'Ramen_shops', type: :feature do
       fill_in 'review_title', with: 'テスト'
       find('#review_rate', visible: false).set(5)
       fill_in 'review_body', with: 'テスト'
-      find_by_id('review_image').click
-      attach_file('review[image]', 'spec/fixtures/test.jpg')
+      find_by_id('review_images').click
+      attach_file('review[images][]', 'spec/fixtures/test.jpg')
       
       expect {
         click_on '登録する'

@@ -23,13 +23,39 @@
           <% end %>
         </div>
         <div id="review-rate-<%= @review.id %>" class="text-center mt-2 mb-4"></div>
-        <div class="text-center">
-          <div class="image-box">
-            <%=  link_to @review.image.url, 'data-lightbox': @review.image do %>
-              <%= image_tag @review.image.medium.url if @review.image? %>
-            <% end %>
+        <% if @review.images.length > 1 %>
+          <div id="slides" class="carousel slide carousel-fade" data-ride="false">
+            <ol class="carousel-indicators">
+              <% @review.images.length.times do |n| %>
+                <li data-target="#slides" data-slide-to="<% n %>"></li>
+              <% end %>
+            </ol>
+            <div class="carousel-inner text-center">
+              <div class="carousel-item active">
+                <%= image_tag @review.images[0].url %>
+              </div>
+              <% @review.images.length.times do |n| %>
+                <% if @review.images[n+1] %>
+                  <div class="carousel-item">
+                    <%= image_tag @review.images[n+1].url %>
+                  </div>
+                <% end %>
+              <% end %>
+              <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="text-center image-box">
+            <%= image_tag @review.images[0].url if @review.images[0] %>
+          </div>
+        <% end %>
         <%= render 'users/shared/social_button', model: @review %>
         <h2><%= @review.title %></h2>
         <div class="p-2">

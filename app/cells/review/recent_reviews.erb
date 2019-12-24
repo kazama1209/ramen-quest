@@ -8,7 +8,7 @@
         <%= link_to review_path(review) do %>
           <div class="reviews">
             <div class="review-image">
-              <%= image_tag review.image.url if review.image? %>
+              <%= image_tag review.images[0].url if review.images? %>
             </div>
             <div class="review-content">
               <h2 class="fs-22 font-weight-bold">

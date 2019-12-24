@@ -2,6 +2,7 @@
   "name": "ramen",
   "private": true,
   "dependencies": {
-    "admin-lte": "3.0.0-alpha.2"
+    "admin-lte": "3.0.0-alpha.2",
+    "swiper": "^5.2.1"
   }
 }

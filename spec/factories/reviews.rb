@@ -9,6 +9,6 @@ FactoryBot.define do
     title { '絶品ラーメン' }
     rate { 5 }
     body { '美味しかったです。' }
-    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
+    images { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
   end
 end
