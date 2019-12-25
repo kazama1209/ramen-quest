@@ -21,4 +21,5 @@
 //= require chartkick
 //= require Chart.bundle
 //= require gmaps/google
+//= require image-preview
 //= require swiper/js/swiper.js

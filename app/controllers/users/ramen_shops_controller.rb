@@ -9,6 +9,7 @@ class Users::RamenShopsController < Users::ApplicationController
   end
 
   def show
+    @review = Review.new
     @reviews = @ramen_shop.reviews.includes(:user).page(params[:page]).order(created_at: :desc)
 
     return unless logged_in?
