@@ -126,3 +126,36 @@
 .carousel-item img {
   width: 100%;
 }
+
+@for $i from 0 to 3 {
+  
+  #img_field_#{$i} {
+  padding: 5px 8px;
+  border: solid 1px $border;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $white;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  
+    &:hover {
+      background-color: $gray;
+      transition: 0.3s ease-out;
+      opacity: 0.9;
+    }
+    
+    i {
+      font-size: 30px;
+      color: $dark-gray;
+      line-height: 150px;
+      transition: 0.3s ease-out;
+    }
+  }
+}

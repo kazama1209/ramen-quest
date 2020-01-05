@@ -1,6 +1,7 @@
 <aside>
-  <div class="d-md-block d-none">
+  <div class="d-md-block d-none mb-3">
     <ul class="list-group shadow-sm">
+      <li class="list-group-item font-weight-bold bg-light">メニュー</li>
       <li class="list-group-item list-group-item-action p-0">
         <%= link_to dashboard_index_path, class: "d-block p-3" do %>
           <i class="fas fa-home"></i> ホーム
@@ -26,6 +27,11 @@
           <i class="fas fa-chart-pie"></i> チャート
         <% end %>
       </li>
+    </ul>
+  </div>
+  <div class="d-md-block d-none">
+    <ul class="list-group shadow-sm">
+      <li class="list-group-item font-weight-bold bg-light">アカウント管理</li>
       <li class="list-group-item list-group-item-action p-0">
         <%= link_to mypage_profile_path(current_user), class: "d-block p-3" do %>
           <i class="fas fa-address-card"></i> プロフィール
