@@ -27,7 +27,9 @@
           <% (0..2).each do |n| %>
             <div id="img_field_<%= n %>" onClick="$('#file_<%= n %>').click()" >
               <% if review.images[n].present? %>
-                <%= image_tag(review.images[n].url) %>
+                <div class="image-box">
+                  <%= image_tag(review.images[n].url) %>
+                </div>
               <% else %>
                 <i class="fas fa-images"></i>
               <% end %>
