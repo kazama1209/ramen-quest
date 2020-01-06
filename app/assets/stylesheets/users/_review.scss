@@ -127,23 +127,23 @@
   width: 100%;
 }
 
-@for $i from 0 to 3 {
+@for $i from 0 through 2 {
   
   #img_field_#{$i} {
-  padding: 5px 8px;
-  border: solid 1px $border;
-  text-align: center;
-  position: relative;
-  padding: 0;
-  border-radius: 5px;
-  cursor: pointer;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: $white;
-  overflow: hidden;
-  box-sizing: border-box;
-  transition: 0.3s ease-out;
+    padding: 5px 8px;
+    border: solid 1px $border;
+    text-align: center;
+    position: relative;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: $white;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: 0.3s ease-out;
   
     &:hover {
       background-color: $gray;
