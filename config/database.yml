@@ -49,7 +49,10 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  host: <%= ENV['RDS_HOST_NAME'] %>
+  username: <%= ENV['RDS_USER_NAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  port: 3306
