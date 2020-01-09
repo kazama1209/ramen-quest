@@ -12,7 +12,7 @@
     </div>
     <div class="card bg-white border-none shadow-sm mb-3">
       <div class="card-header font-weight-bold">
-        食べたラーメンの味比率
+        スープ比率
       </div>
       <div class="card-body p-4">
         <%= pie_chart current_user.reviews.group(:taste).count %>
