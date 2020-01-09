@@ -55,7 +55,7 @@
 
 # 各種機能＆導入技術
 
-- プラットフォーム（Heroku）
+- プラットフォーム（Heroku、AWS ElasticBeanstalk）
 - データベース（MySQL）
 - テスト（Rspec、Capybara、factory_bot）
 - 継続的インテグレーション（Circleci）
@@ -76,5 +76,6 @@
 - 検索（ransack）
 - マップ（geocoder、gmaps4rails）
 - パンくずリスト（gretel）
-- SEO対策（meta-tags、sitemap_generator）
+- SEO対策（google-analytics-rails、meta-tags、sitemap_generator）
 - 管理者ページ（AdminLTE）
+- 通知機能（exception_notification、slack-notifier）
