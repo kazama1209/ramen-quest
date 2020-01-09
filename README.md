@@ -79,3 +79,4 @@
 - SEO対策（google-analytics-rails、meta-tags、sitemap_generator）
 - 管理者ページ（AdminLTE）
 - 通知機能（exception_notification、slack-notifier）
+- 各種API（Twitter、Facebook、LINE、Google）
