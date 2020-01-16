@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     parameters:
@@ -47,7 +47,6 @@ jobs:
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --format progress
-
       - store_artifacts:
           path: coverage
 
@@ -56,7 +55,7 @@ jobs:
           paths:
             - .
 
-  deploy_prod:
+  deploy:
     docker:
       - image: circleci/ruby:2.6.3-node
     working_directory: /tmp/repo
@@ -81,17 +80,15 @@ jobs:
           name: heroku maintenance off
           command: heroku maintenance:off --app ${HEROKU_APP_NAME}
 
-
 workflows:
   version: 2
-  on_push:
+  build-deploy:
     jobs:
-      - build:
-          name: build_normal
-          assets_precompile: false
-      - deploy_prod:
+      - build
+      - deploy:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only:
+                - master
