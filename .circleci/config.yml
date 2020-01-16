@@ -1,12 +1,4 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
-version: 2.1
+version: 2
 jobs:
   build:
     parameters:
@@ -55,7 +47,6 @@ jobs:
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --format progress
-
       - store_artifacts:
           path: coverage
 
@@ -64,10 +55,40 @@ jobs:
           paths:
             - .
 
+  deploy:
+    docker:
+      - image: circleci/ruby:2.6.3-node
+    working_directory: /tmp/repo
+    steps:
+      - checkout
+      - run:
+          name: 'Install Heroku CLI, if necessary'
+          command: |
+            if [[ $(command -v heroku) == "" ]]; then
+              curl https://cli-assets.heroku.com/install.sh | sh
+            else
+              echo "Heroku is already installed. No operation was performed."
+            fi
+      - run:
+          name: heroku maintenance on
+          command: heroku maintenance:on --app ${HEROKU_APP_NAME}
+      - run:
+          name: Deploy to Heroku_Production
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+      - run:
+          name: heroku maintenance off
+          command: heroku maintenance:off --app ${HEROKU_APP_NAME}
+
 workflows:
   version: 2
-  on_push:
+  build-deploy:
     jobs:
-      - build:
-          name: build_normal
-          assets_precompile: false
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
