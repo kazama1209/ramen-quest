@@ -89,7 +89,7 @@ workflows:
       - build:
           name: build_normal
           assets_precompile: false
-      - deploy-prod:
+      - deploy_prod:
           requires:
             - build
           filters:
