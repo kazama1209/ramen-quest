@@ -59,7 +59,7 @@
 - プラットフォーム（Heroku、AWS ElasticBeanstalk）
 - データベース（MySQL）
 - テスト（Rspec、Capybara、factory_bot）
-- 継続的インテグレーション（Circleci）
+- 自動テスト＆自動デプロイ（Circleci）
 - CSSフレームワーク（Bootstrap4）
 - コードチェック（rubocop、rails_best_practices、bullet）
 - セキュリティチェック（brakeman、rack-attack）
