@@ -62,6 +62,10 @@
 - Ruby 2.6.3
 - Rails 5.2.4
 
+# ER図
+
+![RamenQuest ER図](https://user-images.githubusercontent.com/51913879/74673144-066d8e00-51f2-11ea-8bbe-1aa44c02d69c.png)
+
 # 各種機能＆導入技術
 
 - プラットフォーム（Heroku、AWS ElasticBeanstalk）
@@ -90,6 +94,25 @@
 - 通知機能（exception_notification、slack-notifier）
 - 各種API（Twitter、Facebook、LINE、Google）
 
-# ER図
+## トップページ
 
-![RamenQuest ER図](https://user-images.githubusercontent.com/51913879/74673144-066d8e00-51f2-11ea-8bbe-1aa44c02d69c.png)
+![RQ トップページ](https://user-images.githubusercontent.com/51913879/74927279-a4dc3800-541a-11ea-8bc5-bf80b128303e.png)
+
+## ログインページ
+
+![RQ ソーシャルログイン](https://user-images.githubusercontent.com/51913879/74927320-b6bddb00-541a-11ea-965e-fafef0a1271d.png)
+
+## マイページ
+
+![RQ マイページ](https://user-images.githubusercontent.com/51913879/74927356-c806e780-541a-11ea-9fe4-89f1d2c92311.png)
+
+## レビューページ
+
+![RQ みんなのレビュー](https://user-images.githubusercontent.com/51913879/74927392-d94ff400-541a-11ea-9cbe-3e124f2da7a6.png)
+
+![RQ レビューページ](https://user-images.githubusercontent.com/51913879/74927417-e5d44c80-541a-11ea-94e7-ae13a25d6815.png)
+
+## 管理者ページ
+
+![RQ 管理画面](https://user-images.githubusercontent.com/51913879/74927436-f1277800-541a-11ea-9618-81253ef163ed.png)
+
