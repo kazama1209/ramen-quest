@@ -342,7 +342,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     require_all (2.0.0)
     rspec-core (3.9.0)
       rspec-support (~> 3.9.0)
